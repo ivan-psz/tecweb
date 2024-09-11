@@ -175,9 +175,16 @@
     <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
         la matriz $GLOBALS o del modificador global de PHP.</p>
     <h3>&emsp;&emsp;&emsp;Solución</h3>
-
-
-
+    <?php
+        echo "<ul>";
+            echo '<li>'.'Valor global de $a: '.$GLOBALS['a'].'</li>';
+            echo '<li>'.'Valor global de $b: '.$GLOBALS['b'].'</li>';
+            echo '<li>'.'Valor global de $c: '.$GLOBALS['c'].'</li>';
+            echo '<li>'.'Valor global de $z: '; 
+                    print_r($GLOBALS['z']);
+            echo '</li>'; 
+        echo "</ul>";
+    ?>
 
     <br>
     <h2>&emsp;Ejercicio 5</h2>
