@@ -76,11 +76,6 @@
         echo "</table>";
     ?>
 
-    
-
-
-
-
     <br>
     <h2>&emsp;Ejercicio 2</h2>
     <p>Proporciona los valores de $a, $b y $c como sigue: <br></p>
@@ -102,7 +97,31 @@
         <li>Describe en y muestra en la página obtenida qué ocurrió en el segundo bloque de asignaciones</li>
     </ol>
     <h3>&emsp;&emsp;&emsp;Solución</h3>
+    <?php
+        $a="ManejadorSQL";
+        $b='MySQL';
+        $c=&$a;
 
+        echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Inciso a</h4>";
+        echo "<ul>";
+            echo '<li>'.'$a: '.$a.'</li>';
+            echo '<li>'.'$b: '.$b.'</li>';
+            echo '<li>'.'$c: '.$c.'</li>';
+        echo "</ul>";
+        //echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Inciso b</h4>";
+        $a = "PHP server";
+        $b = &$a;
+        echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Inciso c</h4>";
+        echo "<ul>";
+            echo '<li>'.'$a: '.$a.'</li>';
+            echo '<li>'.'$b: '.$b.'</li>';
+            echo '<li>'.'$c: '.$c.'</li>';
+        echo "</ul>";
+        echo 'Lo que ocurrió en el inciso b fue que se cambió el valor de la variable $a y, después, la variable $b empezó a hacer 
+                referencia a la variable $a, por lo que tomó el valor que se le asignó a esta última en la línea anterior. En 
+                cuanto a $c, cuando se declaró, hizo referencia a $a, así que sucedió lo mismo que con $b cuando se cambió el 
+                valor de $a'.'<br>';
+    ?>
 
 
 
