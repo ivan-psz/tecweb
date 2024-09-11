@@ -226,9 +226,55 @@
         <li>$f = ($a XOR $b);</li>
     </ul>
     <h3>&emsp;&emsp;&emsp;Solución</h3>
+    <?php
+        unset($a, $b, $c);
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
 
+        echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Primera parte</h4>";
+        echo "<ul>";
+            echo '<li>'.'Valor de $a: ';
+                    var_dump($a);
+            echo '</li>';
+            echo '<li>'.'Valor de $b: ';
+                    var_dump($b);
+            echo '</li>';
+            echo '<li>'.'Valor de $c: ';
+                    var_dump($c);
+            echo '</li>';
+            echo '<li>'.'Valor de $d: ';
+                    var_dump($d);
+            echo '</li>';
+            echo '<li>'.'Valor de $e: ';
+                    var_dump($e);
+            echo '</li>';
+            echo '<li>'.'Valor de $f: ';
+                    var_dump($f);
+            echo '</li>';
+        echo "</ul>";    
 
-
+        echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Segunda parte</h4>";
+        echo "<ul>";
+            echo '<li>'.'Valor de $a: ';
+                    var_dump($a);
+            echo '</li>';
+            echo '<li>'.'Valor de $b: ';
+                    var_dump($b);
+            echo '</li>';
+            echo '<li>'.'Valor de $c: '.intval($c).'</li>';
+            echo '<li>'.'Valor de $d: ';
+                    var_dump($d);
+            echo '</li>';
+            echo '<li>'.'Valor de $e: '.intval($e).'</li>';
+            echo '<li>'.'Valor de $f: ';
+                    var_dump($f);
+            echo '</li>';
+        echo "</ul>"; 
+    ?>
 
     <br>
     <h2>&emsp;Ejercicio 7</h2>
@@ -239,7 +285,17 @@
         <li>El idioma del navegador (cliente)</li>
     </ol>
     <h3>&emsp;&emsp;&emsp;Solución</h3>
-
+    <?php
+        echo "<ul>";
+        echo '<li>'.'Versión de Apache y PHP: '.$_SERVER['SERVER'];
+                var_dump($a);
+        echo '</li>';
+        echo '<li>'.'Nombre del SO del servidor: ';
+                var_dump($b);
+        echo '</li>';
+        echo '<li>'.'Idioma del navegador del cliente: '.intval($c).'</li>';
+    echo "</ul>"; 
+    ?>
 
 </body>
 </html>
