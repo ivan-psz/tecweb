@@ -104,18 +104,18 @@
 
         echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Inciso a</h4>";
         echo "<ul>";
-            echo '<li>'.'$a: '.$a.'</li>';
-            echo '<li>'.'$b: '.$b.'</li>';
-            echo '<li>'.'$c: '.$c.'</li>';
+            echo '<li>'.'Valor de $a: '.$a.'</li>';
+            echo '<li>'.'Valor de $b: '.$b.'</li>';
+            echo '<li>'.'Valor de $c: '.$c.'</li>';
         echo "</ul>";
         //echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Inciso b</h4>";
         $a = "PHP server";
         $b = &$a;
         echo "<h4>&emsp;&emsp;&emsp;&emsp;&emsp;Inciso c</h4>";
         echo "<ul>";
-            echo '<li>'.'$a: '.$a.'</li>';
-            echo '<li>'.'$b: '.$b.'</li>';
-            echo '<li>'.'$c: '.$c.'</li>';
+            echo '<li>'.'Valor nuevo de $a: '.$a.'</li>';
+            echo '<li>'.'Valor nuevo de $b: '.$b.'</li>';
+            echo '<li>'.'Valor nuevo de $c: '.$c.'</li>';
         echo "</ul>";
         echo 'Lo que ocurrió en el inciso b fue que se cambió el valor de la variable $a y, después, la variable $b empezó a hacer 
                 referencia a la variable $a, por lo que tomó el valor que se le asignó a esta última en la línea anterior. En 
@@ -143,28 +143,28 @@
 
         echo "<ul>";
             $a = "PHP5 ";
-            echo '<li>'.'$a: '.$a.'</li>';
+            echo '<li>'.'Valor $a: '.$a.'</li>';
 
             $z[] = &$a;
-            echo '<li>'.'$z: '; 
+            echo '<li>'.'Valor de $z: '; 
                         print_r($z); 
             echo '</li>';
 
             $b = "5a version de PHP";
-            echo '<li>'.'$b: '.$b.'</li>';
+            echo '<li>'.'Valor de $b: '.$b.'</li>';
 
             $c = (int)$b*10;
-            echo '<li>'.'$c: '.$c.'</li>';
+            echo '<li>'.'Valor de $c: '.$c.'</li>';
 
             $a .= $b;
-            echo '<li>'.'$a: '.$a.'</li>';
+            echo '<li>'.'Valor de $a: '.$a.'</li>';
 
             $b = (int)$b * $c;
-            echo '<li>'.'$b: '.$b.'</li>';
+            echo '<li>'.'Valor de $b: '.$b.'</li>';
 
             $z[0] = "MySQL";
-            echo '<li>'.'$a: '.$a.'</li>';
-            echo '<li>'.'$z: '; 
+            echo '<li>'.'Valor de $a: '.$a.'</li>';
+            echo '<li>'.'Valor de $z: '; 
                         print_r($z); 
             echo '</li>';
         echo "</ul>";
@@ -196,9 +196,19 @@
         <li>$c = (double) $a;</li>
     </ul>
     <h3>&emsp;&emsp;&emsp;Solución</h3>
+    <?php
+        unset($a, $b, $c);
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
 
-
-
+        echo "<ul>";
+            echo '<li>'.'Valor de $a: '.$a.'</li>';
+            echo '<li>'.'Valor de $b: '.$b.'</li>';
+            echo '<li>'.'Valor de $c: '.$c.'</li>';
+        echo "</ul>";
+    ?>
 
     <br>
     <h2>&emsp;Ejercicio 6</h2>
