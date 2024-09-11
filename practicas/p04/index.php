@@ -123,9 +123,6 @@
                 valor de $a'.'<br>';
     ?>
 
-
-
-
     <br>
     <h2>&emsp;Ejercicio 3</h2>
     <p>Muestra el contenido de cada variable inmediatamente después de cada asignación,
@@ -141,10 +138,37 @@
         <li>$z[0] = “MySQL”;</li>
     </ul>
     <h3>&emsp;&emsp;&emsp;Solución</h3>
+    <?php
+        unset($a, $b, $c);
 
+        echo "<ul>";
+            $a = "PHP5 ";
+            echo '<li>'.'$a: '.$a.'</li>';
 
+            $z[] = &$a;
+            echo '<li>'.'$z: '; 
+                        print_r($z); 
+            echo '</li>';
 
+            $b = "5a version de PHP";
+            echo '<li>'.'$b: '.$b.'</li>';
 
+            $c = (int)$b*10;
+            echo '<li>'.'$c: '.$c.'</li>';
+
+            $a .= $b;
+            echo '<li>'.'$a: '.$a.'</li>';
+
+            $b = (int)$b * $c;
+            echo '<li>'.'$b: '.$b.'</li>';
+
+            $z[0] = "MySQL";
+            echo '<li>'.'$a: '.$a.'</li>';
+            echo '<li>'.'$z: '; 
+                        print_r($z); 
+            echo '</li>';
+        echo "</ul>";
+    ?>
 
     <br>
     <h2>&emsp;Ejercicio 4</h2>
