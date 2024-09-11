@@ -287,13 +287,10 @@
     <h3>&emsp;&emsp;&emsp;Solución</h3>
     <?php
         echo "<ul>";
-        echo '<li>'.'Versión de Apache y PHP: '.$_SERVER['SERVER'];
-                var_dump($a);
-        echo '</li>';
-        echo '<li>'.'Nombre del SO del servidor: ';
-                var_dump($b);
-        echo '</li>';
-        echo '<li>'.'Idioma del navegador del cliente: '.intval($c).'</li>';
+        echo '<li>'.'Versión de Apache: '.$_SERVER['SERVER_SOFTWARE'].'</li>';
+        echo '<li>'.'Versión de PHP: '.phpversion().'</li>';
+        echo '<li>'.'Nombre del SO del servidor: '.$_SERVER['SERVER_NAME'].'</li>';
+        echo '<li>'.'Idioma del navegador del cliente: '.substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5).'</li>';
     echo "</ul>"; 
     ?>
 
