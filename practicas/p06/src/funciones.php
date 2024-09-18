@@ -11,8 +11,13 @@
             }
         }
         else{
-            echo '<p><strong>Por favor, ingrese un número válido.</strong></p>';
+            echo '<p><strong>Ingrese un número válido.</strong></p>';
         }
+    }
+
+    if (isset($_GET['numero'])) {
+        $numero = $_GET['numero'];
+        esMultiplo5y7($numero); 
     }
 
 ?>

@@ -17,20 +17,13 @@
 
     <h2>&emsp;Ejercicio 1</h2>
     <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
-    <form action="" method="GET">
+
+    <form action="./src/funciones.php" method="GET">
         <fieldset>
             <legend>Ejercicio 1</legend>
             Ingrese un número: <input type="text" name="numero">
             <p><input type="submit" value="Enviar"></p>
         </fieldset>
-        <?php
-            if(isset($_GET['numero'])){
-                esMultiplo5y7($_GET['numero']);
-            }
-            else{
-                echo '<p><strong>Parece que hay un error en el envío de la información</strong></p>';
-            }
-        ?>
     </form>
 
 </body>
