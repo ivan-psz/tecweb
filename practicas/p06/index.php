@@ -23,15 +23,15 @@
             Ingrese un número: <input type="text" name="numero">
             <p><input type="submit" value="Enviar"></p>
         </fieldset>
+        <?php
+            if(isset($_GET['numero'])){
+                esMultiplo5y7($_GET['numero']);
+            }
+            else{
+                echo '<p><strong>Parece que hay un error en el envío de la información</strong></p>';
+            }
+        ?>
     </form>
-    <?php
-        if(isset($_GET['numero'])){
-            esMultiplo5y7($_GET['numero']);
-        }
-        else{
-            echo '<p><strong>Parece que hay un error en el envío de la información</strong></p>';
-        }
-    ?>
 
 </body>
 </html>
