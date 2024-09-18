@@ -15,14 +15,17 @@
         include("./src/funciones.php");
     ?>
 
-    <h2>&emsp;Ejercicio 1</h2>
-    <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
-
-    <form action="./src/funciones.php" method="GET">
+    <form action="" method="GET">
         <fieldset>
-            <legend>Ejercicio 1</legend>
+            <legend><h2>&emsp;Ejercicio 1</h2></legend>
+            <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
             Ingrese un número: <input type="text" name="numero">
             <p><input type="submit" value="Enviar"></p>
+            <?php
+                if (isset($_GET['numero'])) {
+                    esMultiplo5y7($_GET['numero']); // Pasamos el número ingresado a la función
+                }
+            ?>
         </fieldset>
     </form>
 
