@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 6</title>
+</head>
+<body>
+
+    <div style="text-align: center; margin-top: 0.5rem;">
+        <h1>Uso de funciones, ciclos y arreglos en PHP</h1>
+    </div>
+
+    <?php
+        include("./src/funciones.php");
+    ?>
+
+    <h2>&emsp;Ejercicio 1</h2>
+    <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>Ejercicio 1</legend>
+            Ingrese un número: <input type="text" name="numero">
+            <p><input type="submit" value="Enviar"></p>
+        </fieldset>
+    </form>
+    <?php
+        if(isset($_GET['numero'])){
+            esMultiplo5y7($_GET['numero']);
+        }
+        else{
+            echo '<p><strong>Parece que hay un error en el envío de la información</strong></p>';
+        }
+    ?>
+
+</body>
+</html>
