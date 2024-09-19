@@ -39,8 +39,7 @@
             echo '<br>';
         }
 
-        echo '<p>Números obtenidos: ' . $contadorNumeros . '</p>';
-        echo '<p>Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
+        echo '<p>Números obtenidos: ' . $contadorNumeros . '<br>' . 'Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
     }
 
 ?>

@@ -37,12 +37,17 @@
             <div style="text-align: center;">
                 <strong>Impar, par, impar</strong><br>
             </div>
-            Estos números deben almacenarse en una matriz de M x 3, donde M es el número de filas y 3 es el número de columnas. 
+            <br>Estos números deben almacenarse en una matriz de M x 3, donde M es el número de filas y 3 es el número de columnas. 
             Al final, se debe mostrar el número de iteraciones y la cantidad de números generados.
         </p>
         <?php
             ejercicioDos();
         ?>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ejercicio 3</legend>
+
     </fieldset>
 
 </body>
