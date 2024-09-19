@@ -17,7 +17,30 @@
     //FUNCIÓN DEL EJERCICIO 2
 
     function ejercicioDos(){
-        
+        $matriz = [];
+        $contadorIteraciones = 0;
+        $contadorNumeros = 0;
+
+        while(true){
+            $i = rand(100, 999);
+            $j = rand(100, 999);
+            $k = rand(100, 999);
+            $matriz[] = array($i, $j, $k);
+            $contadorIteraciones++;
+            $contadorNumeros += 3;
+            if(!($i % 2 == 0) && ($j % 2 == 0) && !($k % 2 == 0)){
+                break;
+            }
+        }
+        foreach($matriz as $fila){
+            foreach($fila as $dato){
+                echo $dato.' ';
+            }
+            echo '<br>';
+        }
+
+        echo '<p>Números obtenidos: ' . $contadorNumeros . '</p>';
+        echo '<p>Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
     }
 
 ?>

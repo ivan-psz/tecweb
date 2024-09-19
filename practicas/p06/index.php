@@ -15,25 +15,30 @@
         include("./src/funciones.php");
     ?>
 
-    <fieldset>
-        <legend><h2>Ejercicio 1</h2></legend>
-        <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
-        Ingrese un número: <input type="text" name="numero">
-        <p><input type="submit" value="Enviar"></p>
-        <?php
-            if (isset($_GET['numero'])) {
-                ejercicioUno($_GET['numero']); 
-            }
-        ?>
-    </fieldset>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>Ejercicio 1</legend>
+            <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
+            Ingrese un número: <input type="text" name="numero">
+            <p><input type="submit" value="Enviar"></p>
+            <?php
+                if (isset($_GET['numero'])) {
+                    ejercicioUno($_GET['numero']); // Pasamos el número ingresado a la función
+                }
+            ?>
+        </fieldset>
+    </form>
 
     <fieldset>
-        <legend><h2>Ejercicio 2</h2></legend>
-        <p>Crear un programa para la generación repetitiva de tres números aleatorios hasta obtener una secuencia compuesta por
-            <em>impar, par, impar</em><br>
-            Estos números deben almacenarse en una matriz de M x 3, donde M es el número de filas y 3 es el número de columnas.
-            Al final, se debe mostrar el número de iteraciones y la cantidad de números generados</p>
-        
+        <legend>Ejercicio 2</legend>
+        <p>Crear un programa para la generación repetitiva de tres números aleatorios hasta obtener una secuencia compuesta por <br>
+            <strong>impar, par, impar</strong><br>
+            Estos números deben almacenarse en una matriz de M x 3, donde M es el número de filas y 3 es el número de columnas. 
+            Al final, se debe mostrar el número de iteraciones y la cantidad de números generados
+        </p>
+        <?php
+            ejercicioDos();
+        ?>
     </fieldset>
 
 </body>
