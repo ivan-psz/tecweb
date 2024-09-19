@@ -29,12 +29,16 @@
         </fieldset>
     </form>
 
+    <br>
+
     <fieldset>
         <legend>Ejercicio 2</legend>
-        <p>Crear un programa para la generación repetitiva de tres números aleatorios hasta obtener una secuencia compuesta por <br>
-            <strong>impar, par, impar</strong><br>
+        <p>Crear un programa para la generación repetitiva de tres números aleatorios hasta obtener una secuencia compuesta por: <br>
+            <div style="text-align: center;">
+                <strong>Impar, par, impar</strong><br>
+            </div>
             Estos números deben almacenarse en una matriz de M x 3, donde M es el número de filas y 3 es el número de columnas. 
-            Al final, se debe mostrar el número de iteraciones y la cantidad de números generados
+            Al final, se debe mostrar el número de iteraciones y la cantidad de números generados.
         </p>
         <?php
             ejercicioDos();
