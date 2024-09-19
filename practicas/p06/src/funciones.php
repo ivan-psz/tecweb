@@ -32,12 +32,15 @@
                 break;
             }
         }
+
+        echo '<div style="text-align: center;">';
         foreach($matriz as $fila){
             foreach($fila as $dato){
                 echo $dato.' ';
             }
             echo '<br>';
         }
+        echo '</div>';
 
         echo '<p>Números obtenidos: ' . $contadorNumeros . '<br>' . 'Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
     }

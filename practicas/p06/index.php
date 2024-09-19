@@ -45,6 +45,8 @@
         ?>
     </fieldset>
 
+    <br>
+
     <fieldset>
         <legend>Ejercicio 3</legend>
 
