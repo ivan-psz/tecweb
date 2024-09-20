@@ -170,7 +170,7 @@
                     <ul>
                         <li>Marca</li>
                         <li>Modelo (año)</li>
-                        <li>Tipo (sedan | hackback | camioneta)</li>
+                        <li>Tipo (sedan | hatchback | camioneta)</li>
                     </ul>
                 </li>
                 <li>
@@ -197,12 +197,10 @@
         </p>
         <br>
         <form action="./src/funciones.php" method="POST">
-            Ingrese su edad: <input type="text" name="age">
-            <br>
-            Seleccione su sexo: 
-            <select name="sex">
-                <option value="M">Masculino</option>
-                <option value="F">Femenino</option>
+            Seleccione una opción: 
+            <select name="option">
+                <option value="findByID">Buscar un auto a partir de su matrícula</option>
+                <option value="displayInfo">Mostrar todos los autos</option>
             </select>
             <p><input type="submit" value="Enviar"></p>
         </form>
