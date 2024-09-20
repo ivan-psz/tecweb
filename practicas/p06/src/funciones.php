@@ -78,4 +78,27 @@
         }
     }
 
+    //FUNCIÓN DEL EJERCICIO 4
+
+    function ejercicioCuatro(){
+        $vector = [];
+
+        for($i = 97; $i <= 122; $i++){
+            $vector[$i]=chr($i);
+        }
+
+        echo "<table border='1' cellpadding='3'>";
+            echo '<tr>';
+                echo '<th>Valor ASCII</th>';
+                echo '<th>Caracter</th>';
+            echo '</tr>';
+            foreach($vector as $clave => $valor){
+                echo '<tr>';
+                echo '<td>' . $clave . '</td>';
+                echo '<td>' . $valor . '</td>';
+                echo '</tr>';
+            }
+        echo '</table>';
+    }
+
 ?>

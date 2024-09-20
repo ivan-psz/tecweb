@@ -110,6 +110,11 @@
                 </li>
             </ul>
         </p>
+
+        <?php
+            ejercicioCuatro();
+        ?>
+
     </fieldset>
 
 </body>
