@@ -23,7 +23,7 @@
             <p><input type="submit" value="Enviar"></p>
             <?php
                 if (isset($_GET['numero'])) {
-                    ejercicioUno($_GET['numero']); // Pasamos el número ingresado a la función
+                    ejercicioUno($_GET['numero']);
                 }
             ?>
         </fieldset>
@@ -47,10 +47,29 @@
 
     <br>
 
-    <fieldset>
-        <legend>Ejercicio 3</legend>
+    <form action="" method="GET">
+        <fieldset>
+            <legend>Ejercicio 3</legend>
+            <p>Utiliza un ciclo <strong>while</strong> para encontrar el primer número entero obtenido aleatoriamente,
+                pero que además sea un múltiplo de un número dado
+                <ul>
+                    <li>Crear una variante de este <strong>script</strong> utilizando el ciclo <strong>do-while</strong></li>
+                    <li>El número dado se debe obtener vía GET</li>
+                </ul>
+            </p>
 
-    </fieldset>
+            <br>
+
+            Ingrese un número: <input type="text" name="numero">
+
+            <p><input type="submit" value="Enviar"></p>
+            <?php
+                if (isset($_GET['numero'])) {
+                    ejercicioTres($_GET['numero']);
+                }
+            ?>
+        </fieldset>
+    </form>
 
 </body>
 </html>

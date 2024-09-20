@@ -9,7 +9,8 @@
             } else {
                 echo '<p><strong>Respuesta: El número '.$number.' NO es múltiplo de 5 y 7.</strong></p>';
             }
-        } else {
+        } 
+        else {
             echo '<p><strong>Por favor, ingrese un número válido.</strong></p>';
         }
     }
@@ -43,6 +44,21 @@
         echo '</div>';
 
         echo '<p>Números obtenidos: ' . $contadorNumeros . '<br>' . 'Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
+    }
+
+    //FUNCION DEL EJERCICIO 3
+
+    function ejercicioTres($numero){
+        if(is_numeric($numero)){
+            $i = rand(1, 1000);
+            while(!($i % $numero == 0)){
+                $i = rand(1, 1000);
+            }
+            echo '<p><strong>El primer múltiplo obtenido al azar de ' . $numero . ' es ' . $i . '</strong></p>';
+        }
+        else{
+            echo '<p><strong>Por favor, ingrese un número válido.</strong></p>';
+        }
     }
 
 ?>
