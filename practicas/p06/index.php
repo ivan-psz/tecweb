@@ -15,12 +15,18 @@
         include("./src/funciones.php");
     ?>
 
-    <form action="./src/funciones.php" method="GET">
+    <form action="" method="GET">
         <fieldset>
             <legend><strong>Ejercicio 1</strong></legend>
             <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
             Ingrese un ENTERO POSITIVO: <input type="text" name="number">
             <p><input type="submit" value="Enviar"></p>
+            <?php
+                if (isset($_GET['number'])) {
+                    $num = $_GET['number'];
+                    ejercicioUno($num);
+                }
+            ?>
         </fieldset>
     </form>
 
@@ -42,7 +48,7 @@
 
     <br>
 
-    <form action="./src/funciones.php" method="GET">
+    <form action="" method="GET">
         <fieldset>
             <legend><strong>Ejercicio 3</strong></legend>
             <p>Utiliza un ciclo <strong>while</strong> para encontrar el primer número entero obtenido aleatoriamente,
@@ -55,7 +61,7 @@
 
             <br>
 
-            Ingrese un ENTERO POSITIVO [1 - 1000]: <input type="text" name="n">
+            Ingrese un ENTERO POSITIVO [1 - 1000]: <input type="text" name="num">
             <br>
             Seleccione el ciclo a usar: 
             <select name="loop">
@@ -64,6 +70,20 @@
             </select>
 
             <p><input type="submit" value="Enviar"></p>
+
+            <?php
+                if (isset($_GET['num']) && isset($_GET['loop'])) {
+                    $num = $_GET['num'];
+                    $loop = $_GET['loop'];
+
+                    if($loop == 'while'){
+                        ejercicioTres($num);
+                    }
+                    else{
+                        ejercicioTres_($num);
+                    }
+                }
+            ?>
         </fieldset>
     </form>
 
