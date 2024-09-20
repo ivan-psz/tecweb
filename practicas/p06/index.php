@@ -61,11 +61,25 @@
             <br>
 
             Ingrese un ENTERO POSITIVO: <input type="text" name="num">
+            Ingrese el ciclo a usar: 
+            <select name="ciclo">
+                <option value="while">While</option>
+                <option value="dowhile">Do-While</option>
+            </select>
 
             <p><input type="submit" value="Enviar"></p>
+
             <?php
-                if (isset($_GET['num'])) {
-                    ejercicioTres($_GET['num']);
+                if (isset($_GET['num']) && isset($_GET['ciclo'])) {
+                    $numero = $_GET['num'];
+                    $ciclo = $_GET['ciclo'];
+
+                    if($ciclo == 'while'){
+                        ejercicioTres($numero);
+                    }
+                    else{
+                        ejercicioTres_($numero);
+                    }
                 }
             ?>
         </fieldset>
