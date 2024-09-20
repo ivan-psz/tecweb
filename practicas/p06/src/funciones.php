@@ -174,7 +174,7 @@
 
         echo "<fieldset>";
             echo "<legend><strong>Módulo de búsqueda por matrícula</strong></legend>";
-            echo '<form action="./" method="POST">';
+            echo '<form action="" method="POST">';
                 echo 'Ingrese una matrícula: <input type="text" name="matricula" placeholder="AAA1111">';
                 echo '<p><input type="submit" value="Enviar"></p>';
             echo "</form>";
@@ -415,15 +415,6 @@
         else{
             $titulo = "Información de todos los autos";
             ejercicioSeis($titulo, $parqueVehicular);
-        }
-    }
-
-    if(isset($_POST['id'])){ 
-        $key = strtoupper(trim($_POST['id']));
-        if(array_key_exists($key, $parqueVehicular)){
-            return $parqueVehicular[$key]; 
-        } else {
-            return null; 
         }
     }
 
