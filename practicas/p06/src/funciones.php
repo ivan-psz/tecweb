@@ -184,7 +184,7 @@
 
     function mostrarInformacion($key, $parqueVehicular){
         echo "<fieldset>";
-            echo '<legend><strong>Información del auto con matrícula' . $key . '</strong></legend>';
+            echo '<legend><strong>Información del auto con matrícula ' . $key . '</strong></legend>';
             echo '<ul>';
                 echo '<li><strong>Matrícula:</strong> ' . $key . '</li>';
                 echo '<li><strong>Marca:</strong> ' . $parqueVehicular[$key]['Auto']['Marca'] . '</li>';
