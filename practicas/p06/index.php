@@ -60,7 +60,7 @@
 
             <br>
 
-            Ingrese un ENTERO POSITIVO: <input type="text" name="num">
+            Ingrese un ENTERO POSITIVO [1 - 1000]: <input type="text" name="num">
             <br>
             Ingrese el ciclo a usar: 
             <select name="ciclo">
