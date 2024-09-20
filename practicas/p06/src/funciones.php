@@ -150,21 +150,20 @@
     function ejercicioSeis($titulo, $vector){
         generarUpperXHTML($titulo);
 
-        echo '<div style="text-align: center;">';
-            echo "<h4>Información de todos los vehículos</h4>";
-        echo '</div>';
-
-        foreach($vector as $matricula => $informacion){
-            echo '<ul>';
-                echo '<li><strong>Matrícula:</strong> ' . $matricula . '</li>';
-                echo '<li><strong>Marca:</strong> ' . $informacion['Auto']['Marca'] . '</li>';
-                echo '<li><strong>Modelo:</strong> ' . $informacion['Auto']['Modelo'] . '</li>';
-                echo '<li><strong>Tipo:</strong> ' . $informacion['Auto']['Tipo'] . '</li>';
-                echo '<li><strong>Propietario:</strong> ' . $informacion['Propietario']['Nombre'] . '</li>';
-                echo '<li><strong>Ciudad:</strong> ' . $informacion['Propietario']['Ciudad'] . '</li>';
-                echo '<li><strong>Dirección:</strong> ' . $informacion['Propietario']['Direccion'] . '</li>';
-            echo '</ul>';
-        }
+        echo "<fieldset>";
+            echo "<legend><strong>Información de todos los vehículos</strong></legend>";
+            foreach($vector as $matricula => $informacion){
+                echo '<ul>';
+                    echo '<li><strong>Matrícula:</strong> ' . $matricula . '</li>';
+                    echo '<li><strong>Marca:</strong> ' . $informacion['Auto']['Marca'] . '</li>';
+                    echo '<li><strong>Modelo:</strong> ' . $informacion['Auto']['Modelo'] . '</li>';
+                    echo '<li><strong>Tipo:</strong> ' . $informacion['Auto']['Tipo'] . '</li>';
+                    echo '<li><strong>Propietario:</strong> ' . $informacion['Propietario']['Nombre'] . '</li>';
+                    echo '<li><strong>Ciudad:</strong> ' . $informacion['Propietario']['Ciudad'] . '</li>';
+                    echo '<li><strong>Dirección:</strong> ' . $informacion['Propietario']['Direccion'] . '</li>';
+                echo '</ul>';
+            }
+        echo "</fieldset>";
 
         generarLowerXHTML();
     }
@@ -184,16 +183,18 @@
     }
 
     function mostrarInformacion($key, $parqueVehicular){
-        echo "<p><strong>Auto encontrado.</strong></p>";
-        echo '<ul>';
-            echo '<li><strong>Matrícula:</strong> ' . $key . '</li>';
-            echo '<li><strong>Marca:</strong> ' . $parqueVehicular[$key]['Auto']['Marca'] . '</li>';
-            echo '<li><strong>Modelo:</strong> ' . $parqueVehicular[$key]['Auto']['Modelo'] . '</li>';
-            echo '<li><strong>Tipo:</strong> ' . $parqueVehicular[$key]['Auto']['Tipo'] . '</li>';
-            echo '<li><strong>Propietario:</strong> ' . $parqueVehicular[$key]['Propietario']['Nombre'] . '</li>';
-            echo '<li><strong>Ciudad:</strong> ' . $parqueVehicular[$key]['Propietario']['Ciudad'] . '</li>';
-            echo '<li><strong>Dirección:</strong> ' . $parqueVehicular[$key]['Propietario']['Direccion'] . '</li>';
-        echo '</ul>';
+        echo "<fieldset>";
+            echo '<legend><strong>Información del auto con matrícula' . $key . '</strong></legend>';
+            echo '<ul>';
+                echo '<li><strong>Matrícula:</strong> ' . $key . '</li>';
+                echo '<li><strong>Marca:</strong> ' . $parqueVehicular[$key]['Auto']['Marca'] . '</li>';
+                echo '<li><strong>Modelo:</strong> ' . $parqueVehicular[$key]['Auto']['Modelo'] . '</li>';
+                echo '<li><strong>Tipo:</strong> ' . $parqueVehicular[$key]['Auto']['Tipo'] . '</li>';
+                echo '<li><strong>Propietario:</strong> ' . $parqueVehicular[$key]['Propietario']['Nombre'] . '</li>';
+                echo '<li><strong>Ciudad:</strong> ' . $parqueVehicular[$key]['Propietario']['Ciudad'] . '</li>';
+                echo '<li><strong>Dirección:</strong> ' . $parqueVehicular[$key]['Propietario']['Direccion'] . '</li>';
+            echo '</ul>';
+        echo "</fieldset>";
     }
 
     $parqueVehicular = array(
@@ -414,7 +415,9 @@
         if(array_key_exists($key, $parqueVehicular)){
             mostrarInformacion($key, $parqueVehicular);
         } else {
-            echo "<p><strong>No se encontró un auto con dicha matrícula.</strong></p>";
+            echo '<div style="text-align: center;">';
+                echo "<h4>La matrícula ingresada no se encuentra en la base de datos. Inténtelo de nuevo</h4>";
+            echo '</div>';
         }
     }
 
