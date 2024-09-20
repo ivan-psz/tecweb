@@ -401,7 +401,7 @@
     if(isset($_POST['option'])){
         $option = $_POST['option'];
         
-        if($option = 'findByID'){
+        if($option == 'findByID'){
             $titulo = "Búsqueda por matrícula";
             $auto = moduloBusqueda($titulo);
             if(!empty($auto)){
