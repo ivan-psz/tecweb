@@ -150,26 +150,26 @@
     function ejercicioSeis($titulo, $ban, $vector){
         generarUpperXHTML($titulo);
 
-        echo '<div style="text-align: center;">';
+        
 
         if($ban){
             foreach($vector as $matricula => $informacion){
                 echo '<ul>';
                     echo '<li><strong>Matrícula:</strong> ' . $matricula . '</li>';
-                    echo '<li><strong>Marca:</strong> ' . $info['Auto']['Marca'] . '</li>';
-                    echo '<li><strong>Modelo:</strong> ' . $info['Auto']['Modelo'] . '</li>';
-                    echo '<li><strong>Tipo:</strong> ' . $info['Auto']['Tipo'] . '</li>';
-                    echo '<li><strong>Propietario:</strong> ' . $info['Propietario']['Nombre'] . '</li>';
-                    echo '<li><strong>Ciudad:</strong> ' . $info['Propietario']['Ciudad'] . '</li>';
-                    echo '<li><strong>Dirección:</strong> ' . $info['Propietario']['Direccion'] . '</li>';
+                    echo '<li><strong>Marca:</strong> ' . $informacion['Auto']['Marca'] . '</li>';
+                    echo '<li><strong>Modelo:</strong> ' . $informacion['Auto']['Modelo'] . '</li>';
+                    echo '<li><strong>Tipo:</strong> ' . $informacion['Auto']['Tipo'] . '</li>';
+                    echo '<li><strong>Propietario:</strong> ' . $informacion['Propietario']['Nombre'] . '</li>';
+                    echo '<li><strong>Ciudad:</strong> ' . $informacion['Propietario']['Ciudad'] . '</li>';
+                    echo '<li><strong>Dirección:</strong> ' . $informacion['Propietario']['Direccion'] . '</li>';
                 echo '</ul>';
             }
         }
         else{
-            echo "<p><strong>No existe un auto con la matrícula ingresada. Inténtelo de nuevo.</strong></p>";
+            echo '<div style="text-align: center;">';
+                echo "<p><strong>No existe un auto con la matrícula ingresada. Inténtelo de nuevo.</strong></p>";
+            echo '</div>';
         }
-
-        echo '</div>';
 
         generarLowerXHTML();
     }
