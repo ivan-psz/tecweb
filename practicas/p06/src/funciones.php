@@ -403,7 +403,7 @@
             $auto = moduloBusqueda($titulo, $parqueVehicular);
             if($auto !== null){ 
                 $ban = true;
-                $vector = array($auto); 
+                $vector = array($key => $auto);; 
                 ejercicioSeis($titulo, $ban, $vector);
             } else {
                 $ban = false;
