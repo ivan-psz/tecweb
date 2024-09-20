@@ -61,6 +61,7 @@
             <br>
 
             Ingrese un ENTERO POSITIVO: <input type="text" name="num">
+            <br>
             Ingrese el ciclo a usar: 
             <select name="ciclo">
                 <option value="while">While</option>
