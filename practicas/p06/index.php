@@ -15,17 +15,12 @@
         include("./src/funciones.php");
     ?>
 
-    <form action="" method="GET">
+    <form action="./src/funciones.php" method="GET">
         <fieldset>
             <legend><strong>Ejercicio 1</strong></legend>
             <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
-            Ingrese un ENTERO POSITIVO: <input type="text" name="numero">
+            Ingrese un ENTERO POSITIVO: <input type="text" name="number">
             <p><input type="submit" value="Enviar"></p>
-            <?php
-                if (isset($_GET['numero'])) {
-                    ejercicioUno($_GET['numero']);
-                }
-            ?>
         </fieldset>
     </form>
 
@@ -47,7 +42,7 @@
 
     <br>
 
-    <form action="" method="GET">
+    <form action="./src/funciones.php" method="GET">
         <fieldset>
             <legend><strong>Ejercicio 3</strong></legend>
             <p>Utiliza un ciclo <strong>while</strong> para encontrar el primer número entero obtenido aleatoriamente,
@@ -60,29 +55,15 @@
 
             <br>
 
-            Ingrese un ENTERO POSITIVO [1 - 1000]: <input type="text" name="num">
+            Ingrese un ENTERO POSITIVO [1 - 1000]: <input type="text" name="n">
             <br>
-            Ingrese el ciclo a usar: 
-            <select name="ciclo">
+            Seleccione el ciclo a usar: 
+            <select name="loop">
                 <option value="while">While</option>
                 <option value="dowhile">Do-While</option>
             </select>
 
             <p><input type="submit" value="Enviar"></p>
-
-            <?php
-                if (isset($_GET['num']) && isset($_GET['ciclo'])) {
-                    $numero = $_GET['num'];
-                    $ciclo = $_GET['ciclo'];
-
-                    if($ciclo == 'while'){
-                        ejercicioTres($numero);
-                    }
-                    else{
-                        ejercicioTres_($numero);
-                    }
-                }
-            ?>
         </fieldset>
     </form>
 
@@ -118,7 +99,42 @@
                 ?>
             </div>
         </div>
+    </fieldset>
 
+    <br>
+
+    <fieldset>
+        <legend><strong>Ejercicio 5</strong></legend>
+        <p>
+            Usar las variables <strong>$edad</strong> y <strong>$sexo</strong> en una instrucción <strong>if</strong> para identificar
+            una persona de sexo "femenino", cuya edad oscile entre los 18 y 35 años; y mostrar un mensaje de bienvenida apropiado.
+            Por ejemplo: 
+            <br>
+            <div style="text-align: center;">
+                <em>Bienvenida, usted está en el rango de edad permitido.</em>
+            </div>
+            <br>
+            En caso contrario, deberá devolver otro mensaje indicando el error.
+            <ul>
+                <li>
+                    Los valores para <strong>$edad</strong> y <strong>$sexo</strong> se deben obtener por medio de un formulario en HTML
+                </li>
+                <li>
+                    Utilizar la <em>variable superglobal</em> <strong>$_POST</strong> (revisar la documentación)
+                </li>
+            </ul>
+        </p>
+        <br>
+        <form action="./src/funciones.php" method="POST">
+            Ingrese su edad: <input type="text" name="age">
+            <br>
+            Seleccione su sexo: 
+            <select name="sex">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
     </fieldset>
 
 </body>

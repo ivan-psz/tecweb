@@ -19,44 +19,44 @@
     //FUNCIÓN DEL EJERCICIO 2
 
     function ejercicioDos(){
-        $matriz = [];
-        $contadorIteraciones = 0;
-        $contadorNumeros = 0;
+        $vector = [];
+        $iterationCounter = 0;
+        $numberCounter = 0;
 
         while(true){
             $i = rand(100, 999);
             $j = rand(100, 999);
             $k = rand(100, 999);
-            $matriz[] = array($i, $j, $k);
-            $contadorIteraciones++;
-            $contadorNumeros += 3;
+            $vector[] = array($i, $j, $k);
+            $iterationCounter++;
+            $numberCounter += 3;
             if(!($i % 2 == 0) && ($j % 2 == 0) && !($k % 2 == 0)){
                 break;
             }
         }
 
         echo '<div style="text-align: center;">';
-        foreach($matriz as $fila){
-            foreach($fila as $dato){
-                echo $dato.' ';
+        foreach($vector as $row){
+            foreach($row as $data){
+                echo $data.' ';
             }
             echo '<br>';
         }
         echo '</div>';
 
-        echo '<p>Números obtenidos: ' . $contadorNumeros . '<br>' . 'Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
+        echo '<p>Números obtenidos: ' . $numberCounter . '<br>' . 'Iteraciones realizadas: ' . $iterationCounter . '</p>';
     }
 
     //FUNCIÓN DEL EJERCICIO 3
 
-    function ejercicioTres($numero){
-        if(is_numeric($numero) && $numero > 0 && $numero <= 1000){
-            $numero = (int)$numero;
+    function ejercicioTres($number){
+        if(is_numeric($number) && $number > 0 && $number <= 1000){
+            $number = (int)$number;
             $i = rand(1, 1000);
-            while(!($i % $numero == 0)){
+            while(!($i % $number == 0)){
                 $i = rand(1, 1000);
             }
-            echo '<p><strong>El primer múltiplo obtenido al azar de ' . $numero . ' es ' . $i . '</strong></p>';
+            echo '<p><strong>El primer múltiplo obtenido al azar de ' . $number . ' es ' . $i . '</strong></p>';
         }
         else{
             echo '<p><strong>Por favor, ingrese un número válido.</strong></p>';
@@ -65,13 +65,13 @@
 
     //FUNCIÓN DEL EJERCICIO 3 USANDO DO-WHILE
 
-    function ejercicioTres_($numero){
-        if (is_numeric($numero) && $numero > 0){
-            $numero = (int)$numero;
+    function ejercicioTres_($number){
+        if (is_numeric($number) && $number > 0){
+            $number = (int)$number;
             do{
                 $i = rand(1, 1000);
-            }while(!($i % $numero == 0));
-            echo '<p><strong>El primer múltiplo obtenido al azar de ' . $numero . ' es ' . $i . '</strong></p>';
+            }while(!($i % $number == 0));
+            echo '<p><strong>El primer múltiplo obtenido al azar de ' . $number . ' es ' . $i . '</strong></p>';
         }
         else{
             echo '<p><strong>Por favor, ingrese un número válido.</strong></p>';
@@ -92,13 +92,38 @@
                 echo '<th>Valor ASCII</th>';
                 echo '<th>Caracter</th>';
             echo '</tr>';
-            foreach($vector as $clave => $valor){
+            foreach($vector as $key => $value){
                 echo '<tr>';
-                echo '<td>' . $clave . '</td>';
-                echo '<td>' . $valor . '</td>';
+                echo '<td>' . $key . '</td>';
+                echo '<td>' . $value . '</td>';
                 echo '</tr>';
             }
         echo '</table>';
     }
+
+    if(isset($_GET['number'])){
+        $number = $_GET['number'];
+        ejercicioUno($number);
+    }
+
+    if(isset($_GET['n']) && isset($_GET['loop'])){
+        $number = $_GET['n'];
+        $loop = $_GET['loop'];
+        
+        if($loop == 'while'){
+            ejercicioTres($number);
+        }
+        else{
+            ejercicioTres_($number);
+        }
+    }
+
+    if(isset($_POST['age']) && isset($_POST['sex'])){
+        $age = $_POST['age'];
+        $sex = $_POST['sex'];
+
+    }
+
+
 
 ?>
