@@ -101,23 +101,6 @@
         echo '</table>';
     }
 
-    if(isset($_GET['number'])){
-        $number = $_GET['number'];
-        ejercicioUno($number);
-    }
-
-    if(isset($_GET['n']) && isset($_GET['loop'])){
-        $number = $_GET['n'];
-        $loop = $_GET['loop'];
-        
-        if($loop == 'while'){
-            ejercicioTres($number);
-        }
-        else{
-            ejercicioTres_($number);
-        }
-    }
-
     if(isset($_POST['age']) && isset($_POST['sex'])){
         $age = $_POST['age'];
         $sex = $_POST['sex'];
