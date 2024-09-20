@@ -50,7 +50,7 @@
     //FUNCIÓN DEL EJERCICIO 3
 
     function ejercicioTres($numero){
-        if(is_numeric($numero) && $numero > 0){
+        if(is_numeric($numero) && $numero > 0 && $numero <= 1000){
             $numero = (int)$numero;
             $i = rand(1, 1000);
             while(!($i % $numero == 0)){
