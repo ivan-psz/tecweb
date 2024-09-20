@@ -111,9 +111,11 @@
             </ul>
         </p>
 
-        <?php
-            ejercicioCuatro();
-        ?>
+        <div style="text-align: center;">
+            <?php
+                ejercicioCuatro();
+            ?>
+        </div>
 
     </fieldset>
 
