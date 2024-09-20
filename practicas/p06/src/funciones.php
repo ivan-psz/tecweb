@@ -183,15 +183,6 @@
             echo "</form>";
         echo "</fieldset>";
 
-        if(isset($_POST['id'])){ 
-            $key = strtoupper(trim($_POST['id']));
-            if(array_key_exists($key, $parqueVehicular)){
-                return $parqueVehicular[$key]; 
-            } else {
-                return null; 
-            }
-        }
-
         generarLowerXHTML();
     }
 
@@ -395,16 +386,25 @@
         ejercicioCinco($age, $sex, $titulo, $ban);
     }
 
+    if(isset($_POST['id'])){ 
+        $key = strtoupper(trim($_POST['id']));
+        if(array_key_exists($key, $parqueVehicular)){
+            return $parqueVehicular[$key]; 
+        } else {
+            return null; 
+        }
+    }
+
     if(isset($_POST['option'])){
         $option = $_POST['option'];
         
         if($option == 'findByID'){
             $titulo = "Búsqueda por matrícula";
             $auto = moduloBusqueda($titulo, $parqueVehicular);
+            var_dump($auto);
             if($auto !== null){ 
                 $ban = true;
-                $vector = array($key => $auto);; 
-                ejercicioSeis($titulo, $ban, $vector);
+                ejercicioSeis($titulo, $ban, $auto);
             } else {
                 $ban = false;
                 ejercicioSeis($titulo, $ban, array());
