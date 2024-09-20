@@ -60,12 +60,12 @@
 
             <br>
 
-            Ingrese un número: <input type="text" name="numero">
+            Ingrese un número: <input type="text" name="num">
 
             <p><input type="submit" value="Enviar"></p>
             <?php
-                if (isset($_GET['numero'])) {
-                    ejercicioTres($_GET['numero']);
+                if (isset($_GET['num'])) {
+                    ejercicioTres($_GET['num']);
                 }
             ?>
         </fieldset>
