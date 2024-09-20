@@ -150,8 +150,6 @@
     function ejercicioSeis($titulo, $ban, $vector){
         generarUpperXHTML($titulo);
 
-        
-
         if($ban){
             foreach($vector as $matricula => $informacion){
                 echo '<ul>';
@@ -174,7 +172,7 @@
         generarLowerXHTML();
     }
 
-    function moduloBusqueda($titulo){
+    function moduloBusqueda($titulo, $parqueVehicular){
         generarUpperXHTML($titulo);
 
         echo "<fieldset>";
@@ -184,6 +182,15 @@
                 echo '<p><input type="submit" value="Enviar"></p>';
             echo "</form>";
         echo "</fieldset>";
+
+        if(isset($_POST['id'])){ 
+            $key = strtoupper(trim($_POST['id']));
+            if(array_key_exists($key, $parqueVehicular)){
+                return $parqueVehicular[$key]; 
+            } else {
+                return null; 
+            }
+        }
 
         generarLowerXHTML();
     }
@@ -393,14 +400,14 @@
         
         if($option == 'findByID'){
             $titulo = "Búsqueda por matrícula";
-            $auto = moduloBusqueda($titulo);
-            if(!empty($auto)){
+            $auto = moduloBusqueda($titulo, $parqueVehicular);
+            if($auto !== null){ 
                 $ban = true;
-                ejercicioSeis($titulo, $ban, $auto);
-            }
-            else{
+                $vector = array($auto); 
+                ejercicioSeis($titulo, $ban, $vector);
+            } else {
                 $ban = false;
-                ejercicioSeis($titulo, $ban, $auto);
+                ejercicioSeis($titulo, $ban, array());
             }
         }
         else{
@@ -409,18 +416,6 @@
             ejercicioSeis($titulo, $ban, $parqueVehicular);
         }
         
-    }
-
-    if(isset($_POST['id'])){
-        $key = strtoupper(trim($_POST['id']));
-
-        if(array_key_exists($key, $parqueVehicular)){
-            return $parqueVehicular[$key];
-        }
-        else{
-            $vector = array();
-            return $vector;
-        }
     }
 
 ?>

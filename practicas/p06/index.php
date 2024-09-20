@@ -158,6 +158,8 @@
         </form>
     </fieldset>
 
+    <br>
+
     <fieldset>
         <legend><strong>Ejercicio 6</strong></legend>
         <p>
