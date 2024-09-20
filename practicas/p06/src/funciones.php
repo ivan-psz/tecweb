@@ -415,6 +415,7 @@
         }
         else{
             $titulo = "Información de todos los autos";
+            $ban = true;
             ejercicioSeis($titulo, $ban, $parqueVehicular);
         }
         
