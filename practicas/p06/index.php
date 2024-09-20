@@ -88,7 +88,31 @@
 
     <br>
 
+    <fieldset>
+        <legend><strong>Ejercicio 4</strong></legend>
+        <p>
+            Crea un arreglo cuyos <strong>índices</strong> van de 97 a 122 y cuyos <strong>valores</strong> son letras de la 'a' a la
+            'z'. Usa la función <strong>chr(n)</strong> que devuelve el caracter cuyo código ASCII es <strong>n</strong> para poner 
+            el valor en cada índice. Es decir: <br>
 
+            <strong>&emsp;[97] => a</strong><br>
+            <strong>&emsp;[98] => b</strong><br>
+            <strong>&emsp;[99] => c</strong><br>
+            <strong>...</strong><br>
+            <strong>&emsp;[122] => z</strong><br>
+
+            <br>
+
+            <ul>
+                <li>
+                    Crea el arreglo con un ciclo <strong>for</strong>
+                </li>
+                <li>
+                    Lee el arreglo y crea una tabla en XHTML con <strong>echo</strong> y un ciclo <strong>foreach</strong><br>
+                </li>
+            </ul>
+        </p>
+    </fieldset>
 
 </body>
 </html>
