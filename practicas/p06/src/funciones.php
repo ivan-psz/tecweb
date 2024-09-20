@@ -174,7 +174,7 @@
 
         echo "<fieldset>";
             echo "<legend><strong>Módulo de búsqueda por matrícula</strong></legend>";
-            echo '<form action="" method="POST">';
+            echo '<form action="./" method="POST">';
                 echo 'Ingrese una matrícula: <input type="text" name="matricula" placeholder="AAA1111">';
                 echo '<p><input type="submit" value="Enviar"></p>';
             echo "</form>";
