@@ -178,28 +178,31 @@
                 echo 'Ingrese una matrícula: <input type="text" name="matricula" placeholder="AAA1111">';
                 echo '<p><input type="submit" value="Enviar"></p>';
             echo "</form>";
-
-            if(isset($_POST['matricula'])){ 
-                $key = strtoupper(trim($_POST['matricula']));
-                if(array_key_exists($key, $parqueVehicular)){
-                    echo "<p><strong>Auto encontrado.</strong></p>";
-                    echo '<ul>';
-                        echo '<li><strong>Matrícula:</strong> ' . $key . '</li>';
-                        echo '<li><strong>Marca:</strong> ' . $parqueVehicular[$key]['Auto']['Marca'] . '</li>';
-                        echo '<li><strong>Modelo:</strong> ' . $parqueVehicular[$key]['Auto']['Modelo'] . '</li>';
-                        echo '<li><strong>Tipo:</strong> ' . $parqueVehicular[$key]['Auto']['Tipo'] . '</li>';
-                        echo '<li><strong>Propietario:</strong> ' . $parqueVehicular[$key]['Propietario']['Nombre'] . '</li>';
-                        echo '<li><strong>Ciudad:</strong> ' . $parqueVehicular[$key]['Propietario']['Ciudad'] . '</li>';
-                        echo '<li><strong>Dirección:</strong> ' . $parqueVehicular[$key]['Propietario']['Direccion'] . '</li>';
-                    echo '</ul>';
-                } else {
-                    echo "<p><strong>No se encontró un auto con dicha matrícula.</strong></p>";
-                }
-            }
-
         echo "</fieldset>";
 
+        if(isset($_POST['matricula'])){ 
+            $key = strtoupper(trim($_POST['matricula']));
+            if(array_key_exists($key, $parqueVehicular)){
+                mostrarInformacion($key, $parqueVehicular);
+            } else {
+                echo "<p><strong>No se encontró un auto con dicha matrícula.</strong></p>";
+            }
+        }
+
         generarLowerXHTML();
+    }
+
+    function mostrarInformacion($key, $parqueVehicular){
+        echo "<p><strong>Auto encontrado.</strong></p>";
+        echo '<ul>';
+            echo '<li><strong>Matrícula:</strong> ' . $key . '</li>';
+            echo '<li><strong>Marca:</strong> ' . $parqueVehicular[$key]['Auto']['Marca'] . '</li>';
+            echo '<li><strong>Modelo:</strong> ' . $parqueVehicular[$key]['Auto']['Modelo'] . '</li>';
+            echo '<li><strong>Tipo:</strong> ' . $parqueVehicular[$key]['Auto']['Tipo'] . '</li>';
+            echo '<li><strong>Propietario:</strong> ' . $parqueVehicular[$key]['Propietario']['Nombre'] . '</li>';
+            echo '<li><strong>Ciudad:</strong> ' . $parqueVehicular[$key]['Propietario']['Ciudad'] . '</li>';
+            echo '<li><strong>Dirección:</strong> ' . $parqueVehicular[$key]['Propietario']['Direccion'] . '</li>';
+        echo '</ul>';
     }
 
     $parqueVehicular = array(
