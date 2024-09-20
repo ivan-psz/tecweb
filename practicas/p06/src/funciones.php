@@ -147,26 +147,23 @@
 
     //FUNCIÓN DEL EJERCICIO 6
 
-    function ejercicioSeis($titulo, $ban, $vector){
+    function ejercicioSeis($titulo, $vector){
         generarUpperXHTML($titulo);
 
-        if($ban){
-            foreach($vector as $matricula => $informacion){
-                echo '<ul>';
-                    echo '<li><strong>Matrícula:</strong> ' . $matricula . '</li>';
-                    echo '<li><strong>Marca:</strong> ' . $informacion['Auto']['Marca'] . '</li>';
-                    echo '<li><strong>Modelo:</strong> ' . $informacion['Auto']['Modelo'] . '</li>';
-                    echo '<li><strong>Tipo:</strong> ' . $informacion['Auto']['Tipo'] . '</li>';
-                    echo '<li><strong>Propietario:</strong> ' . $informacion['Propietario']['Nombre'] . '</li>';
-                    echo '<li><strong>Ciudad:</strong> ' . $informacion['Propietario']['Ciudad'] . '</li>';
-                    echo '<li><strong>Dirección:</strong> ' . $informacion['Propietario']['Direccion'] . '</li>';
-                echo '</ul>';
-            }
-        }
-        else{
-            echo '<div style="text-align: center;">';
-                echo "<p><strong>No existe un auto con la matrícula ingresada. Inténtelo de nuevo.</strong></p>";
-            echo '</div>';
+        echo '<div style="text-align: center;">';
+            echo "<h4>Información de todos los vehículos</h4>";
+        echo '</div>';
+
+        foreach($vector as $matricula => $informacion){
+            echo '<ul>';
+                echo '<li><strong>Matrícula:</strong> ' . $matricula . '</li>';
+                echo '<li><strong>Marca:</strong> ' . $informacion['Auto']['Marca'] . '</li>';
+                echo '<li><strong>Modelo:</strong> ' . $informacion['Auto']['Modelo'] . '</li>';
+                echo '<li><strong>Tipo:</strong> ' . $informacion['Auto']['Tipo'] . '</li>';
+                echo '<li><strong>Propietario:</strong> ' . $informacion['Propietario']['Nombre'] . '</li>';
+                echo '<li><strong>Ciudad:</strong> ' . $informacion['Propietario']['Ciudad'] . '</li>';
+                echo '<li><strong>Dirección:</strong> ' . $informacion['Propietario']['Direccion'] . '</li>';
+            echo '</ul>';
         }
 
         generarLowerXHTML();
@@ -181,6 +178,25 @@
                 echo 'Ingrese una matrícula: <input type="text" name="id" placeholder="AAA1111">';
                 echo '<p><input type="submit" value="Enviar"></p>';
             echo "</form>";
+
+            if(isset($_POST['id'])){ 
+                $key = strtoupper(trim($_POST['id']));
+                if(array_key_exists($key, $parqueVehicular)){
+                    echo "<p><strong>Auto encontrado.</strong></p>";
+                    echo '<ul>';
+                        echo '<li><strong>Matrícula:</strong> ' . $key . '</li>';
+                        echo '<li><strong>Marca:</strong> ' . $parqueVehicular[$key]['Auto']['Marca'] . '</li>';
+                        echo '<li><strong>Modelo:</strong> ' . $parqueVehicular[$key]['Auto']['Modelo'] . '</li>';
+                        echo '<li><strong>Tipo:</strong> ' . $parqueVehicular[$key]['Auto']['Tipo'] . '</li>';
+                        echo '<li><strong>Propietario:</strong> ' . $parqueVehicular[$key]['Propietario']['Nombre'] . '</li>';
+                        echo '<li><strong>Ciudad:</strong> ' . $parqueVehicular[$key]['Propietario']['Ciudad'] . '</li>';
+                        echo '<li><strong>Dirección:</strong> ' . $parqueVehicular[$key]['Propietario']['Direccion'] . '</li>';
+                    echo '</ul>';
+                } else {
+                    echo "<p><strong>No se encontró un auto con dicha matrícula.</strong></p>";
+                }
+            }
+
         echo "</fieldset>";
 
         generarLowerXHTML();
@@ -386,6 +402,19 @@
         ejercicioCinco($age, $sex, $titulo, $ban);
     }
 
+    if(isset($_POST['option'])){
+        $option = $_POST['option'];
+        
+        if($option == 'findByID'){
+            $titulo = "Búsqueda por matrícula";
+            moduloBusqueda($titulo, $parqueVehicular);
+        }
+        else{
+            $titulo = "Información de todos los autos";
+            ejercicioSeis($titulo, $parqueVehicular);
+        }
+    }
+
     if(isset($_POST['id'])){ 
         $key = strtoupper(trim($_POST['id']));
         if(array_key_exists($key, $parqueVehicular)){
@@ -393,29 +422,6 @@
         } else {
             return null; 
         }
-    }
-
-    if(isset($_POST['option'])){
-        $option = $_POST['option'];
-        
-        if($option == 'findByID'){
-            $titulo = "Búsqueda por matrícula";
-            $auto = moduloBusqueda($titulo, $parqueVehicular);
-            var_dump($auto);
-            if($auto !== null){ 
-                $ban = true;
-                ejercicioSeis($titulo, $ban, $auto);
-            } else {
-                $ban = false;
-                ejercicioSeis($titulo, $ban, array());
-            }
-        }
-        else{
-            $titulo = "Información de todos los autos";
-            $ban = true;
-            ejercicioSeis($titulo, $ban, $parqueVehicular);
-        }
-        
     }
 
 ?>
