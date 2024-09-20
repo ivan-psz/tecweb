@@ -137,7 +137,7 @@
             }
         }
         else{
-            echo "<p><strong>Se introdujo un valor inválido para la edad. Vuelva a intentarlo</strong></p>";
+            echo "<p><strong>Se introdujo un valor inválido para la edad. Vuelva a intentarlo.</strong></p>";
         }
 
         echo '</div>';
@@ -150,7 +150,7 @@
         $sex = $_POST['sex'];
         $titulo = "Respuesta del servidor";
 
-        if (is_numeric($age) && $age > 0) {
+        if (is_numeric($age) && $age > 0 && $age < 101) {
             $age = (int)$age;
             $ban = true;
         } 
