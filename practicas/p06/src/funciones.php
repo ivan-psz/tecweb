@@ -183,16 +183,6 @@
                 echo 'Ingrese una matrícula: <input type="text" name="id" placeholder="AAA1111">';
                 echo '<p><input type="submit" value="Enviar"></p>';
             echo "</form>";
-
-            $key = strtoupper(trim($_POST['id']));
-
-            if(array_key_exists($key, $parqueVehicular)){
-                return $parqueVehicular[$key];
-            }
-            else{
-                $vector = array();
-                return $vector;
-            }
         echo "</fieldset>";
 
         generarLowerXHTML();
@@ -419,6 +409,18 @@
             ejercicioSeis($titulo, $ban, $parqueVehicular);
         }
         
+    }
+
+    if(isset($_POST['id'])){
+        $key = strtoupper(trim($_POST['id']));
+
+        if(array_key_exists($key, $parqueVehicular)){
+            return $parqueVehicular[$key];
+        }
+        else{
+            $vector = array();
+            return $vector;
+        }
     }
 
 ?>
