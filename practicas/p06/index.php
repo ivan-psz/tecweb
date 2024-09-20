@@ -17,7 +17,7 @@
 
     <form action="" method="GET">
         <fieldset>
-            <legend>Ejercicio 1</legend>
+            <legend><strong>Ejercicio 1</strong></legend>
             <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
             Ingrese un número: <input type="text" name="numero">
             <p><input type="submit" value="Enviar"></p>
@@ -32,7 +32,7 @@
     <br>
 
     <fieldset>
-        <legend>Ejercicio 2</legend>
+        <legend><strong>Ejercicio 2</strong></legend>
         <p>Crear un programa para la generación repetitiva de tres números aleatorios hasta obtener una secuencia compuesta por: <br>
             <div style="text-align: center;">
                 <strong>Impar, par, impar</strong><br>
@@ -49,7 +49,7 @@
 
     <form action="" method="GET">
         <fieldset>
-            <legend>Ejercicio 3</legend>
+            <legend><strong>Ejercicio 3</strong></legend>
             <p>Utiliza un ciclo <strong>while</strong> para encontrar el primer número entero obtenido aleatoriamente,
                 pero que además sea un múltiplo de un número dado
                 <ul>
@@ -70,6 +70,10 @@
             ?>
         </fieldset>
     </form>
+
+    <br>
+
+    
 
 </body>
 </html>
