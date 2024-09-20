@@ -92,9 +92,9 @@
     <fieldset>
         <legend><strong>Ejercicio 4</strong></legend>
         <p>
-            Crea un arreglo cuyos <strong>índices</strong> van de 97 a 122 y cuyos <strong>valores</strong> son letras de la 'a' a la
-            'z'. Usa la función <strong>chr(n)</strong> que devuelve el caracter cuyo código ASCII es <strong>n</strong> para poner 
-            el valor en cada índice. Es decir: 
+            Crea un arreglo cuyos <strong>índices</strong> van de 97 a 122 y cuyos <strong>valores</strong> son letras de la 'a' a 
+            la 'z'. Usa la función <strong>chr(n)</strong> que devuelve el caracter cuyo código ASCII es <strong>n</strong> para 
+            poner el valor en cada índice. Es decir: 
             <br>
             <strong>&emsp;[97] => a</strong><br>
             <strong>&emsp;[98] => b</strong><br>
@@ -126,9 +126,9 @@
     <fieldset>
         <legend><strong>Ejercicio 5</strong></legend>
         <p>
-            Usar las variables <strong>$edad</strong> y <strong>$sexo</strong> en una instrucción <strong>if</strong> para identificar
-            una persona de sexo "femenino", cuya edad oscile entre los 18 y 35 años; y mostrar un mensaje de bienvenida apropiado.
-            Por ejemplo: 
+            Usar las variables <strong>$edad</strong> y <strong>$sexo</strong> en una instrucción <strong>if</strong> para 
+            identificar una persona de sexo "femenino", cuya edad oscile entre los 18 y 35 años; y mostrar un mensaje de 
+            bienvenida apropiado. Por ejemplo: 
             <br>
             <div style="text-align: center;">
                 <em>Bienvenida, usted está en el rango de edad permitido.</em>
@@ -137,11 +137,62 @@
             En caso contrario, deberá devolver otro mensaje indicando el error.
             <ul>
                 <li>
-                    Los valores para <strong>$edad</strong> y <strong>$sexo</strong> se deben obtener por medio de un formulario en HTML
+                    Los valores para <strong>$edad</strong> y <strong>$sexo</strong> se deben obtener por medio de un formulario 
+                    en HTML
                 </li>
                 <li>
                     Utilizar la <em>variable superglobal</em> <strong>$_POST</strong> (revisar la documentación)
                 </li>
+            </ul>
+        </p>
+        <br>
+        <form action="./src/funciones.php" method="POST">
+            Ingrese su edad: <input type="text" name="age">
+            <br>
+            Seleccione su sexo: 
+            <select name="sex">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+            <p><input type="submit" value="Enviar"></p>
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend><strong>Ejercicio 6</strong></legend>
+        <p>
+            Crea, en código duro, un arreglo asociativo que sirva para registrar el parque vehicular de una ciudad. Cada vehículo
+            debe ser identificado por:
+            <ul>
+                <li>Matricula</li>
+                <li>
+                    Auto
+                    <ul>
+                        <li>Marca</li>
+                        <li>Modelo (año)</li>
+                        <li>Tipo (sedan | hackback | camioneta)</li>
+                    </ul>
+                </li>
+                <li>
+                    Propietario
+                    <ul>
+                        <li>Nombre</li>
+                        <li>Ciudad</li>
+                        <li>Dirección</li>
+                    </ul>
+                </li>
+            </ul>
+            La matrícula debe tener el siguiente formato: <strong>LLLNNNN</strong>, donde las <strong>L</strong> pueden ser letras
+            de la A - Z y las <strong>N</strong> pueden ser números de 0 - 9.
+
+            Para hacer esto, toma en cuenta las siguientes instrucciones:
+
+            <ul>
+                <li>Crea en código duro el registro para 15 autos</li>
+                <li>Utiliza un único arreglo, cuya clave de cada registro sea la matrícula</li>
+                <li>Lógicamente, la matrícula no se puede repetir</li>
+                <li>Los datos del Auto deben ir dentro de un arreglo</li>
+                <li>Los datos del Propietario deben ir dentro de un arreglo</li>
             </ul>
         </p>
         <br>
