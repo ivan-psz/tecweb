@@ -19,7 +19,7 @@
         <fieldset>
             <legend><strong>Ejercicio 1</strong></legend>
             <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7<br></p>
-            Ingrese un número: <input type="text" name="numero">
+            Ingrese un ENTERO POSITIVO: <input type="text" name="numero">
             <p><input type="submit" value="Enviar"></p>
             <?php
                 if (isset($_GET['numero'])) {
@@ -60,7 +60,7 @@
 
             <br>
 
-            Ingrese un número: <input type="text" name="num">
+            Ingrese un ENTERO POSITIVO: <input type="text" name="num">
 
             <p><input type="submit" value="Enviar"></p>
             <?php
@@ -73,7 +73,7 @@
 
     <br>
 
-    
+
 
 </body>
 </html>

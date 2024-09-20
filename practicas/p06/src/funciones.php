@@ -4,6 +4,7 @@
 
     function ejercicioUno($number) {
         if (is_numeric($number)) {
+            $number = (int)$number;
             if ($number % 5 == 0 && $number % 7 == 0) {
                 echo '<p><strong>Respuesta: El número '.$number.' SÍ es múltiplo de 5 y 7.</strong></p>';
             } else {
@@ -46,14 +47,30 @@
         echo '<p>Números obtenidos: ' . $contadorNumeros . '<br>' . 'Iteraciones realizadas: ' . $contadorIteraciones . '</p>';
     }
 
-    //FUNCION DEL EJERCICIO 3
+    //FUNCIÓN DEL EJERCICIO 3
 
     function ejercicioTres($numero){
-        if(is_numeric($numero)){
+        if(is_numeric($numero) && $numero > 0){
+            $numero = (int)$numero;
             $i = rand(1, 1000);
             while(!($i % $numero == 0)){
                 $i = rand(1, 1000);
             }
+            echo '<p><strong>El primer múltiplo obtenido al azar de ' . $numero . ' es ' . $i . '</strong></p>';
+        }
+        else{
+            echo '<p><strong>Por favor, ingrese un número válido.</strong></p>';
+        }
+    }
+
+    //FUNCIÓN DEL EJERCICIO 3 USANDO DO-WHILE
+
+    function ejercicioTres_($numero){
+        if (is_numeric($numero) && $numero > 0){
+            $numero = (int)$numero;
+            do{
+                $i = rand(1, 1000);
+            }while(!($i % $numero == 0));
             echo '<p><strong>El primer múltiplo obtenido al azar de ' . $numero . ' es ' . $i . '</strong></p>';
         }
         else{
