@@ -180,15 +180,6 @@
             echo "</form>";
         echo "</fieldset>";
 
-        if(isset($_POST['matricula'])){ 
-            $key = strtoupper(trim($_POST['matricula']));
-            if(array_key_exists($key, $parqueVehicular)){
-                mostrarInformacion($key, $parqueVehicular);
-            } else {
-                echo "<p><strong>No se encontró un auto con dicha matrícula.</strong></p>";
-            }
-        }
-
         generarLowerXHTML();
     }
 
@@ -415,6 +406,15 @@
         else{
             $titulo = "Información de todos los autos";
             ejercicioSeis($titulo, $parqueVehicular);
+        }
+    }
+
+    if(isset($_POST['matricula'])){ 
+        $key = strtoupper(trim($_POST['matricula']));
+        if(array_key_exists($key, $parqueVehicular)){
+            mostrarInformacion($key, $parqueVehicular);
+        } else {
+            echo "<p><strong>No se encontró un auto con dicha matrícula.</strong></p>";
         }
     }
 
