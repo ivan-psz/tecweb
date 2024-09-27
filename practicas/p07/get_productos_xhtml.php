@@ -70,7 +70,7 @@
                             echo '<tr>';
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
-                                    if($key != 'id'){
+                                    if($key == 'id'){
                                         echo '<th scope="row">' . $data[$num][$key] = utf8_encode($value) . '</th>';
                                     }
                                     else{
