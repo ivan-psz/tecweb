@@ -88,7 +88,7 @@
                     ?>
 				</tbody>
 			</table>
-        <?php elseif(!empty($row)) : ?>
+        <?php elseif(empty($row)) : ?>
 
 			 <script>
                 alert('No existen productos con unidades menores al tope introducido');
