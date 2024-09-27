@@ -2,6 +2,7 @@
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
     <?php
+    $data = array();
 	if(isset($_GET['tope']))
     {
 		$tope = $_GET['tope'];
@@ -65,24 +66,15 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row"><?= $row['id'] ?></th>
-						<td><?= $row['nombre'] ?></td>
-						<td><?= $row['marca'] ?></td>
-						<td><?= $row['modelo'] ?></td>
-						<td><?= $row['precio'] ?></td>
-						<td><?= $row['unidades'] ?></td>
-						<td><?= utf8_encode($row['detalles']) ?></td>
-						<td><img src=<?= $row['imagen'] ?> ></td>
+                        <?php
+                            foreach($row as $num => $registro){
+                                foreach($registro as $key => $value){
+                                    echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
+                                }
+                            }
+                        ?>
 					</tr>
 				</tbody>
 			</table>
-
-		<?php elseif(!empty($tope)) : ?>
-
-			 <script>
-                alert('El tope de unidades no existe');
-             </script>
-
-		<?php endif; ?>
 	</body>
 </html>
