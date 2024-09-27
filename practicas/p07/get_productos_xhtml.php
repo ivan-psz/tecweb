@@ -49,7 +49,7 @@
 
 		<br/>
 		
-		<?php if( isset($row) ) : ?>
+		<?php if( isset($row) && !empty($row)) : ?>
 
 			<table class="table">
 				<thead class="thead-dark">
@@ -88,7 +88,7 @@
                     ?>
 				</tbody>
 			</table>
-        <?php elseif(empty($row)) : ?>
+        <?php else : ?>
 
 			 <script>
                 alert('No existen productos con unidades menores al tope introducido');
