@@ -17,6 +17,7 @@
 			    /** NOTA: con @ se suprime el Warning para gestionar el error por medio de código */
 		}
 
+		$link->set_charset('utf8');
 		/** Crear una tabla que no devuelve un conjunto de resultados */
 		if ( $result = $link->query("SELECT * FROM productos WHERE id = '{$id}'") ) 
 		{
