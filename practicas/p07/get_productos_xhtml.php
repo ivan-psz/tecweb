@@ -65,15 +65,15 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-                        <?php
-                            foreach($row as $num => $registro){
-                                foreach($registro as $key => $value){
-                                    echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
-                                }
+                    <?php
+                        foreach($row as $num => $registro){
+                            echo '<tr>';
+                            foreach($registro as $key => $value){
+                                echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
                             }
-                        ?>
-					</tr>
+                            echo '</tr>';
+                        }
+                    ?>
 				</tbody>
 			</table>
         <?php elseif(!empty($id)) : ?>
