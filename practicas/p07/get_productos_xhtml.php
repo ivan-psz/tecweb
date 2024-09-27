@@ -76,5 +76,12 @@
 					</tr>
 				</tbody>
 			</table>
+        <?php elseif(!empty($id)) : ?>
+
+			 <script>
+                alert('No existen productos con unidades menores al tope introducido');
+             </script>
+
+		<?php endif; ?>
 	</body>
 </html>
