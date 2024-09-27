@@ -74,7 +74,7 @@
                                 }
                                 else{
                                     echo '<td>';
-                                         $data[$num][$key];
+                                         echo $data[$num][$key];
                                     echo '</td>';
                                 }
                             }
