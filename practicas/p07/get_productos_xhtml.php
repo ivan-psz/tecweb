@@ -69,7 +69,14 @@
                         foreach($row as $num => $registro){
                             echo '<tr>';
                             foreach($registro as $key => $value){
-                                echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
+                                if($key != 'imagen'){
+                                    echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
+                                }
+                                else{
+                                    echo '<td>';
+                                        echo '<img src = ' . $data[$num][$key] . '>';
+                                    echo '</td>';
+                                }
                             }
                             echo '</tr>';
                         }
