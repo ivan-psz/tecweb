@@ -74,7 +74,7 @@
                                 }
                                 else{
                                     echo '<td>';
-                                         echo $data[$num][$key];
+                                         echo '<img src = ' . $value . '>';
                                     echo '</td>';
                                 }
                             }
