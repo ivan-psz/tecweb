@@ -18,6 +18,8 @@
 		}
 
 		$link->set_charset('utf8');
+		echo 'Conjunto de caracteres actual: ' . $link->character_set_name();
+		
 		/** Crear una tabla que no devuelve un conjunto de resultados */
 		if ( $result = $link->query("SELECT * FROM productos WHERE id = '{$id}'") ) 
 		{
