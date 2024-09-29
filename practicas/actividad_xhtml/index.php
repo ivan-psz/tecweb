@@ -22,61 +22,58 @@
             <li>$house*5</li>
         </ul>
         <h3>&emsp;&emsp;&emsp;Solución</h3>
-        
-        <div class="tabla">
-            <?php
-                $_myvar;
-                $_7var;
-                //myvar;
-                $myvar;
-                $var7;
-                $_element1;
-                //$house*5;
-                echo "<table ";
-                    echo "<tr>";
-                        echo "<th>Identificador</th>";
-                        echo "<th>¿Es válido?</th>";
-                        echo "<th>Explicación</th>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>$_myvar</td>';
-                        echo "<td>Sí</td>";
-                        echo "<td>Usa el prefijo correcto, empieza con un guión bajo y utiliza caracteres válidos</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>$_7var</td>';
-                        echo "<td>Sí</td>";
-                        echo "<td>Usa el prefijo correcto, empieza con un guión bajo y utiliza caracteres válidos</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>myvar</td>';
-                        echo "<td>No</td>";
-                        echo "<td>No tiene el prefijo del signo de dólar ($) usado para definir variables</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>$myvar</td>';
-                        echo "<td>Sí</td>";
-                        echo "<td>Usa el prefijo correcto y utiliza caracteres válidos</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>$var7</td>';
-                        echo "<td>Sí</td>";
-                        echo "<td>Usa el prefijo correcto y utiliza caracteres válidos</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>$_element1</td>';
-                        echo "<td>Sí</td>";
-                        echo "<td>Usa el prefijo correcto, empieza con un guión bajo y utiliza caracteres válidos</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo '<td>$house*5</td>';
-                        echo "<td>No</td>";
-                        echo "<td>Usa un carácter inválido (*)</td>";
-                    echo "</tr>";
-                echo "</table>";
-            ?>
-        </div>
 
+        <?php
+            $_myvar;
+            $_7var;
+            //myvar;
+            $myvar;
+            $var7;
+            $_element1;
+            //$house*5;
+            echo "<table";
+                echo "<tr>";
+                    echo "<th>Identificador</th>";
+                    echo "<th>¿Es válido?</th>";
+                    echo "<th>Explicación</th>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>$_myvar</td>';
+                    echo "<td>Sí</td>";
+                    echo "<td>Usa el prefijo correcto, empieza con un guión bajo y utiliza caracteres válidos</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>$_7var</td>';
+                    echo "<td>Sí</td>";
+                    echo "<td>Usa el prefijo correcto, empieza con un guión bajo y utiliza caracteres válidos</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>myvar</td>';
+                    echo "<td>No</td>";
+                    echo "<td>No tiene el prefijo del signo de dólar ($) usado para definir variables</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>$myvar</td>';
+                    echo "<td>Sí</td>";
+                    echo "<td>Usa el prefijo correcto y utiliza caracteres válidos</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>$var7</td>';
+                    echo "<td>Sí</td>";
+                    echo "<td>Usa el prefijo correcto y utiliza caracteres válidos</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>$_element1</td>';
+                    echo "<td>Sí</td>";
+                    echo "<td>Usa el prefijo correcto, empieza con un guión bajo y utiliza caracteres válidos</td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo '<td>$house*5</td>';
+                    echo "<td>No</td>";
+                    echo "<td>Usa un carácter inválido (*)</td>";
+                echo "</tr>";
+            echo "</table>";
+        ?>
         
         <div>
             <br />

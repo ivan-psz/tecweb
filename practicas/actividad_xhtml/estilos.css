@@ -3,10 +3,6 @@ div.titulo{
     margin-top: 0.5rem;
 }
 
-div.tabla{
-    text-align: center;
-}
-
 table, th, td{
     border: 1px solid;
 }
@@ -14,6 +10,8 @@ table, th, td{
 table{
     width: 50%;
     border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th{
