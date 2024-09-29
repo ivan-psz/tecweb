@@ -23,16 +23,16 @@
         </ul>
         <h3>&emsp;&emsp;&emsp;Solución</h3>
         
-        <?php
-            $_myvar;
-            $_7var;
-            //myvar;
-            $myvar;
-            $var7;
-            $_element1;
-            //$house*5;
-            echo '<div class"tabla"';
-                echo '<table ';
+        <div class="tabla">
+            <?php
+                $_myvar;
+                $_7var;
+                //myvar;
+                $myvar;
+                $var7;
+                $_element1;
+                //$house*5;
+                echo "<table ";
                     echo "<tr>";
                         echo "<th>Identificador</th>";
                         echo "<th>¿Es válido?</th>";
@@ -74,8 +74,9 @@
                         echo "<td>Usa un carácter inválido (*)</td>";
                     echo "</tr>";
                 echo "</table>";
-            echo '</div';
-        ?>
+            ?>
+        </div>
+
         
         <div>
             <br />
