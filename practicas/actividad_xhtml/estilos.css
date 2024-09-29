@@ -31,3 +31,8 @@ ol.ol-1{
 ol.ol-2{
     list-style-type: decimal;
 }
+
+p.certificado{
+    margin-right: 1rem;
+    text-align: right;
+}
