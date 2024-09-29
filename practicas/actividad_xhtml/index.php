@@ -23,7 +23,7 @@
         </ul>
         <h3>&emsp;&emsp;&emsp;Solución</h3>
         
-        <div class="tabla">
+        
             <?php
                 $_myvar;
                 $_7var;
@@ -32,7 +32,7 @@
                 $var7;
                 $_element1;
                 //$house*5;
-                echo "<table ";
+                echo '<table class="tabla"';
                     echo "<tr>";
                         echo "<th>Identificador</th>";
                         echo "<th>¿Es válido?</th>";
@@ -75,7 +75,6 @@
                     echo "</tr>";
                 echo "</table>";
             ?>
-        </div>
 
         
         <div>
