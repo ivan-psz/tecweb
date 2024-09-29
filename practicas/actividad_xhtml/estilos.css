@@ -1,0 +1,35 @@
+div.titulo{
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+div.tabla{
+    text-align: center;
+    display: inline-block;
+}
+
+table, th, td{
+    border: 1px solid;
+}
+
+table{
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th{
+    padding: 3px;
+}
+
+td{
+    padding: 3px;
+    text-align: center;
+}
+
+ol.ol-1{
+    list-style-type: decimal;
+}
+
+ol.ol-2{
+    list-style-type: decimal;
+}
