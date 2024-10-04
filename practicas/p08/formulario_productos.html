@@ -11,6 +11,12 @@
                 text-align: center;
                 margin-top: 1rem;
             }
+            input.input-precio{
+                width: auto;
+            }
+            input.input-unidades{
+                width: auto;
+            }
         </style>
         <script>
             function validarPrecio(precio) {
@@ -40,6 +46,7 @@
                     return false;
                 }
 
+                console.log("Se pasó la validación");
                 return true;
             }
 
@@ -63,9 +70,9 @@
                         <li><label for="nombre">Nombre: </label> <input type="text" name="nombre" id="nombre" placeholder="No más de 100 caracteres" required="required" maxlength="100" /></li>
                         <li><label for="marca">Marca: </label> <input type="text" name="marca" id="marca" placeholder="No más de 25 caracteres" required="required" maxlength="25" /></li>
                         <li><label for="modelo">Modelo: </label> <input type="text" name="modelo" id="modelo" placeholder="No más de 25 caracteres" required="required" maxlength="25" /></li>
-                        <li><label for="precio">Precio: </label> <input type="text" name="precio" id="precio" placeholder="No más de 10 digitos en total" required="required" /></li>
+                        <li><label for="precio">Precio: </label> <input class="input-precio" type="text" name="precio" id="precio" placeholder="No más de 10 digitos en total" required="required" /></li>
                         <li><label for="detalles">Detalles: </label> <br> <textarea name="detalles" rows="4" cols="60" id="detalles" placeholder="No más de 250 caracteres de longitud" required="required" maxlength="250"></textarea></li>
-                        <li><label for="unidades">Unidades: </label> <input type="number" name="unidades" id="unidades" placeholder="No más de 6 dígitos" required="required" min="1" max="999999" /></li>
+                        <li><label for="unidades">Unidades: </label> <input class="input-unidades" type="number" name="unidades" id="unidades" placeholder="No más de 6 dígitos" required="required" min="1" max="999999" /></li>
                         <li><label for="imagen">Imagen: </label> <input type="text" name="imagen" id="imagen" placeholder="img/nombre.jpg" required="required" maxlength="100" /></li>
                     </ul>
             </fieldset>
