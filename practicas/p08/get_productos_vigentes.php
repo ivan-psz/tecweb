@@ -27,7 +27,7 @@
 		$link->set_charset('utf8');
 		
 		/** Crear una tabla que no devuelve un conjunto de resultados */
-		if ( $result = $link->query("SELECT * FROM productos WHERE unidades <= $tope AND eliminado = 1") ) 
+		if ( $result = $link->query("SELECT * FROM productos WHERE unidades <= $tope AND eliminado != 1") ) 
 		{
             /** Se extraen las tuplas obtenidas de la consulta */
 			$row = $result->fetch_all(MYSQLI_ASSOC);
