@@ -43,7 +43,8 @@
 						$unidades = $_POST['unidades'];
 						$imagen = $_POST['imagen'];
 
-						$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', '0')";
+						//$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', '0')";
+						$sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) values ('{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
 
 						if ( $link->query($sql) ){
 							echo '<h2 class="titulo">El artículo se ha registrado correctamente</h2>';
