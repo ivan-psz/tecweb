@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>Confirmación de registro</title>
-		<link rel="stylesheet" type="text/css" href="estilos.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/estilos.css" />
 	</head>
 	<body>
         <?php
