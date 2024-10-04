@@ -1,0 +1,78 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>Registro de productos</title>
+        <style type="text/css">
+            ol, ul { 
+                list-style-type: none;
+            }
+            div.titulo{
+                text-align: center;
+                margin-top: 1rem;
+            }
+        </style>
+        <script>
+            function validarPrecio(precio) {
+                const regexPrecio = /^\d{1,8}\.\d{2}$/;
+                return regexPrecio.test(precio);
+            }
+
+            function validarImagen(imagen) {
+                const regexImagen = /^img\/.{1,90}\.jpg$/; 
+                return regexImagen.test(imagen);
+            }
+
+            function validarFormulario(event) {
+                const precio = document.getElementById("precio").value;
+                const imagen = document.getElementById("imagen").value;
+
+                if (!validarPrecio(precio)) {
+                    alert("El precio debe tener un máximo de 8 dígitos antes del punto y exactamente 2 dígitos después (ejemplo: 12345678.99).");
+                    event.preventDefault();
+                    return false;
+                }
+
+                // Validar el formato de la imagen
+                if (!validarImagen(imagen)) {
+                    alert("El campo de imagen debe comenzar con 'img/', tener hasta 90 caracteres y terminar con '.jpg' (ejemplo: img/nombre.jpg).");
+                    event.preventDefault();
+                    return false;
+                }
+
+                return true;
+            }
+
+            window.onload = function() {
+                const formulario = document.getElementById("formularioProductos");
+                formulario.addEventListener("submit", validarFormulario);
+            };
+        </script>
+    </head>
+    <body>
+        <div class="titulo">
+            <h1>Registro de productos</h1>
+        </div>
+
+        <p>Ingresa la información solicitada a continuación:</p>
+
+        <form id="formularioProductos" action="http://localhost/tecweb/practicas/p08/set_producto_v2.php" method="post">
+            <fieldset>
+                <legend>Información del producto</legend>
+                    <ul>
+                        <li><label for="nombre">Nombre: </label> <input type="text" name="nombre" id="nombre" placeholder="No más de 100 caracteres" required="required" maxlength="100" /></li>
+                        <li><label for="marca">Marca: </label> <input type="text" name="marca" id="marca" placeholder="No más de 25 caracteres" required="required" maxlength="25" /></li>
+                        <li><label for="modelo">Modelo: </label> <input type="text" name="modelo" id="modelo" placeholder="No más de 25 caracteres" required="required" maxlength="25" /></li>
+                        <li><label for="precio">Precio: </label> <input type="text" name="precio" id="precio" placeholder="No más de 10 digitos en total" required="required" /></li>
+                        <li><label for="detalles">Detalles: </label> <br> <textarea name="detalles" rows="4" cols="60" id="detalles" placeholder="No más de 250 caracteres de longitud" required="required" maxlength="250"></textarea></li>
+                        <li><label for="unidades">Unidades: </label> <input type="number" name="unidades" id="unidades" placeholder="No más de 6 dígitos" required="required" min="1" max="999999" /></li>
+                        <li><label for="imagen">Imagen: </label> <input type="text" name="imagen" id="imagen" placeholder="img/nombre.jpg" required="required" maxlength="100" /></li>
+                    </ul>
+            </fieldset>
+            <p>
+                <input type="submit" value="Registrar producto">
+                <input type="reset">
+            </p>
+        </form>
+    </body>
+</html>
