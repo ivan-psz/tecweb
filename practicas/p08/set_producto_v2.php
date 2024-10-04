@@ -34,7 +34,7 @@
 					}
 
 					if($registro_encontrado){
-						echo '<h2 class="titulo">El artículo a registrar ya se encuentra dentro de la base de datos.</h2>';
+						echo '<h2 class="titulo">El artículo a registrar ya se encuentra dentro de la base de datos</h2>';
 						echo '<p>Intente registrar uno nuevo.</p>';
 					}
 					else{
@@ -46,16 +46,16 @@
 						$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
 
 						if ( $link->query($sql) ){
-							echo '<h2 class="titulo">El artículo se ha registrado correctamente.</h2>';
+							echo '<h2 class="titulo">El artículo se ha registrado correctamente</h2>';
 							echo '<p>Los datos asociados son los siguientes:</p>';
 							echo '<ul>';
-								echo '<li><em>Nombre: </em>' . $nombre . '</li>';
-								echo '<li><em>Marca: </em>' . $marca . '</li>';
-								echo '<li><em>Modelo: </em>' . $modelo . '</li>';
-								echo '<li><em>Precio: </em>' . $precio . '</li>';
-								echo '<li><em>Detalles: </em>' . $detalles . '</li>';
-								echo '<li><em>Unidades: </em>' . $unidades . '</li>';
-								echo '<li><em>Ruta de la imagen: </em>' . $imagen . '</li>';
+								echo '<li><strong>Nombre: </strong>' . $nombre . '</li>';
+								echo '<li><strong>Marca: </strong>' . $marca . '</li>';
+								echo '<li><strong>Modelo: </strong>' . $modelo . '</li>';
+								echo '<li><strong>Precio: </strong>' . $precio . '</li>';
+								echo '<li><strong>Detalles: </strong>' . $detalles . '</li>';
+								echo '<li><strong>Unidades: </strong>' . $unidades . '</li>';
+								echo '<li><strong>Ruta de la imagen: </strong>' . $imagen . '</li>';
 							echo '</ul>';
 						}
 						else{
@@ -65,7 +65,7 @@
 					$result->free();
 				}
 				else{
-					echo '<h1>ERROR AL INTENTAR OBTENER INFORMACIÓN DE LA BASE DE DATOS</h1>';
+					echo '<h2>ERROR AL INTENTAR OBTENER INFORMACIÓN DE LA BASE DE DATOS</h2>';
 				}
             }
         ?>
