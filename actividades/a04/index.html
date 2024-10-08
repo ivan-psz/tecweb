@@ -111,6 +111,17 @@
         <br/>
 
         <h3>&emsp;Ejemplo 5</h3>
+        <!--
+            <script type="text/javascript">
+                var nombre;
+                var nota;
+                nombre = prompt('Ingresa tu nombre:', '');
+                nota = prompt('Ingresa tu nota:', '');
+                if (nota>=4) {
+                    document.write(nombre+' esta aprobado con un '+nota);
+                }
+            </script>
+        -->
         <p>
             <ul>
                 <li>Archivo: <em>JS03_Estructuras_de_condicion.pdf</em></li>
@@ -118,12 +129,27 @@
             </ul>
         </p>
         <div class="ejemplos">
-
+            <input type="button" value="Ver ejemplo cinco" onclick="ejemploCinco();" />
         </div>
 
         <br/>
 
         <h3>&emsp;Ejemplo 6</h3>
+        <!--
+            <script type="text/javascript">
+                var num1,num2;
+                num1 = prompt('Ingresa el primer número:', '');
+                num2 = prompt('Ingresa el segundo número:', '');
+                num1 = parseInt(num1);
+                num2 = parseInt(num2);
+                if (num1>num2) {
+                    document.write('el mayor es '+num1);
+                }
+                else {
+                    document.write('el mayor es '+num2);
+                }
+            </script>
+        -->
         <p>
             <ul>
                 <li>Archivo: <em>JS03_Estructuras_de_condicion.pdf</em></li>
@@ -131,12 +157,40 @@
             </ul>
         </p>
         <div class="ejemplos">
-
+            <input type="button" value="Ver ejemplo seis" onclick="ejemploSeis();" />
         </div>
 
         <br/>
 
         <h3>&emsp;Ejemplo 7</h3>
+        <!--
+            <script type="text/javascript">
+                var nota1,nota2,nota3;
+
+                nota1 = prompt('Ingresa 1ra. nota:', '');
+                nota2 = prompt('Ingresa 2da. nota:', '');
+                nota3 = prompt('Ingresa 3ra. nota:', '');
+
+                //Convertimos los 3 string en enteros
+                nota1 = parseInt(nota1);
+                nota2 = parseInt(nota2);
+                nota3 = parseInt(nota3);
+
+                var pro;
+                pro = (nota1+nota2+nota3)/3;
+                if (pro>=7) {
+                    document.write('aprobado');
+                }
+                else {
+                    if (pro>=4) {
+                        document.write('regular');
+                    }
+                    else {
+                        document.write('reprobado');
+                    }
+                }
+            </script>
+        -->
         <p>
             <ul>
                 <li>Archivo: <em>JS03_Estructuras_de_condicion.pdf</em></li>
@@ -144,12 +198,39 @@
             </ul>
         </p>
         <div class="ejemplos">
-
+            <input type="button" value="Ver ejemplo siete" onclick="ejemploSiete();" />
         </div>
 
         <br/>
 
         <h3>&emsp;Ejemplo 8</h3>
+        <!--
+            <script type="text/javascrip">
+                var valor;
+                valor = prompt('Ingresar un valor comprendido entre 1 y 5:', '');
+                //Convertimos a entero
+                valor = parseInt(valor);
+                switch (valor) {
+                    case 1: 
+                        document.write('uno');
+                        break;
+                    case 2: 
+                        document.write('dos');
+                        break;
+                    case 3: 
+                        document.write('tres');
+                        break;
+                    case 4: 
+                        document.write('cuatro');
+                        break;
+                    case 5: 
+                        document.write('cinco');
+                        break;
+                    default:
+                        document.write('debe ingresar un valor comprendido entre 1 y 5.');
+                }
+            </script>
+        -->
         <p>
             <ul>
                 <li>Archivo: <em>JS03_Estructuras_de_condicion.pdf</em></li>
@@ -157,7 +238,7 @@
             </ul>
         </p>
         <div class="ejemplos">
-
+            <input type="button" value="Ver ejemplo ocho" onclick="ejemploOcho();" />
         </div>
 
         <br/>
