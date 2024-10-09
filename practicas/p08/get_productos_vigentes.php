@@ -71,11 +71,11 @@
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
                                     if($key == 'id'){
-                                        echo '<th scope="row">' . $data[$num][$key] = utf8_encode($value) . '</th>';
+                                        echo '<th scope="row">' . $value . '</th>';
                                     }
                                     else{
 										if($key != 'eliminado'){
-											echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
+											echo '<td>' . $value . '</td>';
 										}
                                     }
                                 }
