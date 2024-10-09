@@ -81,7 +81,7 @@
                                 }
                                 else{
                                     echo '<td>';
-                                         echo '<img src = ' . $value . '>';
+                                         echo '<img src = ' . $value . ' style="width: 200px;">';
                                     echo '</td>';
                                 }
                             }
