@@ -132,15 +132,19 @@ function obtenerDatos(event, id){
 
 function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta){
     var form = document.createElement("form");
+    form.method = 'POST';
+    form.action = '../formulario_productos_v2.php';
 
     var nombreIn = document.createElement("input");
     nombreIn.type = 'text';
     nombreIn.name = 'nombre';
+    nombreIn.id = 'nombre';
     nombreIn.value = nombre;
     form.appendChild(nombreIn);
     
     var marcaSel = document.createElement("select");
     marcaSel.name = 'marca';
+    marcaSel.id = 'marca';
 
     var marcas = ['Canon', 'Fujifilm', 'Hasselblad', 'Leica', 'Nikon', 'Olympus', 'Pentax', 'Sony'];
 
@@ -160,29 +164,34 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
     var modeloIn = document.createElement("input");
     modeloIn.type = 'text';
     modeloIn.name = 'modelo';
+    modeloIn.id = 'modelo';
     modeloIn.value = modelo;
     form.appendChild(modeloIn);
 
     var precioIn = document.createElement("input")
     precioIn.type = 'text';
     precioIn.name = 'precio';
+    precioIn.id = 'precio';
     precioIn.value = precio;
     form.appendChild(precioIn);
 
     var detallesTA = document.createElement("textarea");
     detallesTA.name = 'detalles';
+    detallesTA.id = 'detalles';
     detallesTA.value = detalles;
     form.appendChild(detallesTA);
 
     var unidadesIn = document.createElement("input");
     unidadesIn.type = 'number';
     unidadesIn.name = 'unidades';
+    unidadesIn.id = 'unidades';
     unidadesIn.value = unidades;
     form.appendChild(unidadesIn);
 
     var imageIn = document.createElement("input");
     imageIn.type = 'text';
     imageIn.name = 'ruta';
+    imageIn.id = 'ruta';
     imageIn.value = ruta;
     form.appendChild(imageIn);
     
