@@ -21,14 +21,14 @@
                 <label for="marca">Marca: 
                     <select name="marca" id="marca">
                         <option value="none" selected>Elige una opción</option>
-                        <option value="canon" <?=(isset($_POST['marca']) && $_POST['marca'] == 'canon') ? 'selected' : '' ?>>Canon</option>
-                        <option value="fujifilm" <?=(isset($_POST['marca']) && $_POST['marca'] == 'fujifilm') ? 'selected' : '' ?>>Fujifilm</option>
-                        <option value="hasselblad" <?=(isset($_POST['marca']) && $_POST['marca'] == 'hasselblad') ? 'selected' : '' ?>>Hasselblad</option>
-                        <option value="leica" <?=(isset($_POST['marca']) && $_POST['marca'] == 'leica') ? 'selected' : '' ?>>Leica</option>
-                        <option value="nikon" <?=(isset($_POST['marca']) && $_POST['marca'] == 'nikon') ? 'selected' : '' ?>>Nikon</option>
-                        <option value="olympus" <?=(isset($_POST['marca']) && $_POST['marca'] == 'olympus') ? 'selected' : '' ?>>Olympus</option>
-                        <option value="pentax" <?=(isset($_POST['marca']) && $_POST['marca'] == 'pentax') ? 'selected' : '' ?>>Pentax</option>
-                        <option value="sony" <?=(isset($_POST['marca']) && $_POST['marca'] == 'sony') ? 'selected' : '' ?>>Sony</option>
+                        <option value="Canon" <?=(isset($_POST['marca']) && $_POST['marca'] == 'canon') ? 'selected' : '' ?>>Canon</option>
+                        <option value="Fujifilm" <?=(isset($_POST['marca']) && $_POST['marca'] == 'fujifilm') ? 'selected' : '' ?>>Fujifilm</option>
+                        <option value="Hasselblad" <?=(isset($_POST['marca']) && $_POST['marca'] == 'hasselblad') ? 'selected' : '' ?>>Hasselblad</option>
+                        <option value="Leica" <?=(isset($_POST['marca']) && $_POST['marca'] == 'leica') ? 'selected' : '' ?>>Leica</option>
+                        <option value="Nikon" <?=(isset($_POST['marca']) && $_POST['marca'] == 'nikon') ? 'selected' : '' ?>>Nikon</option>
+                        <option value="Olympus" <?=(isset($_POST['marca']) && $_POST['marca'] == 'olympus') ? 'selected' : '' ?>>Olympus</option>
+                        <option value="Pentax" <?=(isset($_POST['marca']) && $_POST['marca'] == 'pentax') ? 'selected' : '' ?>>Pentax</option>
+                        <option value="Sony" <?=(isset($_POST['marca']) && $_POST['marca'] == 'sony') ? 'selected' : '' ?>>Sony</option>
                     </select>
                 </label>
                 <br/>

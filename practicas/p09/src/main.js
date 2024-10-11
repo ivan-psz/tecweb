@@ -153,7 +153,6 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
 
     marcas.forEach(function(marcaItem) {
         var marcaOpt = document.createElement("option");
-        marcaOpt.value = marcaItem.toLowerCase();  
         marcaOpt.text = marcaItem;  
         
         if (marcaItem === marca) {
