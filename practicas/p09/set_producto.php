@@ -39,7 +39,12 @@
 					}
 					else{
 						$precio = $_POST['precio'];
-						$detalles = $_POST['detalles'];
+						if($_POST['detalles'] == 'NULL'){
+							$detalles = NULL;
+						}
+						else{
+							$detalles = $_POST['detalles'];
+						}
 						$unidades = $_POST['unidades'];
 						$imagen = $_POST['ruta'];
 
