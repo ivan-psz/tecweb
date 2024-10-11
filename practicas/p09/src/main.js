@@ -8,12 +8,12 @@ function validarFormulario(event){
     var ruta = document.getElementById('rutaProducto');
 
     console.log('Datos recibidos: ' + 
-                '\nNombre: ' + nombre +
-                '\nMarca: ' + marca +
-                '\nModelo: ' + modelo +
-                '\nPrecio: ' + precio +
-                '\nDetalles: ' + detalles +
-                '\nUnidades: ' + unidades +
+                '\nNombre: ' + nombre.value +
+                '\nMarca: ' + marca.options[document.getElementById('marcaProducto').selectedIndex].text +
+                '\nModelo: ' + modelo.value +
+                '\nPrecio: ' + precio.value +
+                '\nDetalles: ' + detalles.value +
+                '\nUnidades: ' + unidades.value +
                 '\nRuta: ' + ruta);
 
     if(nombre.value === ''){
