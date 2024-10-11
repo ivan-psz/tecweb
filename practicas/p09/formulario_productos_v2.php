@@ -36,9 +36,7 @@
                 <label for="precio">Precio: <input type="text" name="precio" id="precio" value="<?=$_POST['precio']?>"/></label>
                 <br/>
                 <label for="detalles">Detalles: 
-                    <textarea name="detalles" id="detalles" cols="50" rows="4" placeholder="Máximo 250 caracteres">
-                        <?php echo $_POST['detalles']; ?>
-                    </textarea>
+                    <textarea name="detalles" id="detalles" cols="50" rows="4" placeholder="Máximo 250 caracteres"><?php echo $_POST['detalles']; ?></textarea>
                 </label>
                 <br/>
                 <label for="unidades">Unidades: <input type="number" name="unidades" id="unidades" value="<?=$_POST['unidades']?>"/></label>
