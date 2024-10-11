@@ -11,10 +11,11 @@
         <div class="titulo">
             <h3>Actualizar datos</h3>
         </div>
-        <p>Ingresa la información que a continuación se te solicita.</p>
-        <form id="formularioProductos" action="./set_producto.php" method="post">
+        <p>Modifica la información que desees.</p>
+        <form id="formularioProductos" action="./update.php" method="post">
             <fieldset>
                 <legend>Información del producto</legend>
+                <input type="hidden" name="id" value="<?=$_POST['id']?>">
                 <label for="nombre">Nombre: <input type="text" name="nombre" id="nombre" value="<?=$_POST['nombre']?>"/></label>
                 <br/>
                 <label for="marca">Marca: 

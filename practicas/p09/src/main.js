@@ -139,6 +139,12 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
     idIn.value = id;
     form.appendChild(idIn);
 
+    var idIn = document.createElement("input");
+    idIn.type = 'hidden';
+    idIn.name = 'id';
+    idIn.value = id;
+    form.appendChild(idIn);
+
     var nombreIn = document.createElement("input");
     nombreIn.type = 'text';
     nombreIn.name = 'nombre';
