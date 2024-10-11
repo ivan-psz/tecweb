@@ -73,7 +73,7 @@
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
                                     if($key == 'id'){
-                                        echo '<th scope="row"> class="row-data">' . $value . '</th>';
+                                        echo '<th scope="row" class="row-data">' . $value . '</th>';
                                     }
                                     else{
                                         if($key != 'eliminado'){
