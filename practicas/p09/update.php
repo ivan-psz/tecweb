@@ -17,7 +17,7 @@
             $precio = $_POST['precio'];
             $unidades = $_POST['unidades'];
             $detalles = $_POST['detalles'];
-            $imagen = $_POST['imagen'];
+            $ruta = $_POST['ruta'];
 
             // Ejecuta la actualización del registro
             $sql = "UPDATE productos SET 
@@ -27,11 +27,11 @@
                     precio='$precio', 
                     unidades='$unidades', 
                     detalles='$detalles', 
-                    imagen='$imagen' 
+                    imagen='$ruta' 
                     WHERE id='$id'";
             
             if (mysqli_query($link, $sql)) {
-                echo "Registro actualizado.";
+                echo 'Registro con id ' . $id . ' actualizado.';
             } else {
                 echo "ERROR: No se ejecutó $sql. " . mysqli_error($link);
             }
