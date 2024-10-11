@@ -3,6 +3,11 @@ div.titulo{
     margin-top: 1rem;
 }
 
+h2.titulo{
+    text-align: center;
+    margin-top: 1rem;
+}
+
 ol, ul { 
     list-style-type: none;
 }

@@ -76,12 +76,12 @@ function validarFormulario(event){
         event.preventDefault();
         return false;
     }
-    
+
     if(detalles.value === ''){
         detalles.value = 'NULL';
     }
     if(ruta.value === ''){
-        ruta.value = './img/default.jpg';
+        ruta.value = 'img/default.jpg';
     }
     console.log('Se pasó la validación.');
     return true;
