@@ -105,6 +105,12 @@ function obtenerDatos(event, id){
     var unidades = data[6].innerHTML;
     var ruta = data[7].querySelector('img').src;;
 
+    var inicioRuta = 'img/';
+    var indiceRuta = ruta.indexOf(inicioRuta);
+    if (indiceRuta !== -1) {
+        ruta = ruta.substring(indiceRuta); 
+    }
+
     if(detalles.includes('El producto no tiene detalles')){
         detalles = '';
     }
@@ -130,49 +136,61 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
 
     var nombreIn = document.createElement("input");
     nombreIn.type = 'text';
-    nombreIn.name = 'nombreProducto';
+    nombreIn.name = 'nombre';
     nombreIn.value = nombre;
     form.appendChild(nombreIn);
     
-    var marcaIn = document.createElement("input");
-    marcaIn.type = 'text';
-    marcaIn.name = 'marcaProducto';
-    marcaIn.value = marca;
-    form.appendChild(marcaIn);
+    var marcaSel = document.createElement("select");
+    marcaSel.name = 'marca';
 
+    var marcas = ['Canon', 'Fujifilm', 'Hasselblad', 'Leica', 'Nikon', 'Olympus', 'Pentax', 'Sony'];
+
+    marcas.forEach(function(marcaItem) {
+        var marcaOpt = document.createElement("option");
+        marcaOpt.value = marcaItem.toLowerCase();  
+        marcaOpt.text = marcaItem;  
+        
+        if (marcaItem === marca) {
+            marcaOpt.selected = true;
+        }
+        marcaSel.appendChild(marcaOpt);
+    });
+    
+    form.appendChild(marcaSel);
+    
     var modeloIn = document.createElement("input");
     modeloIn.type = 'text';
-    modeloIn.name = 'modeloProducto';
+    modeloIn.name = 'modelo';
     modeloIn.value = modelo;
     form.appendChild(modeloIn);
 
     var precioIn = document.createElement("input")
     precioIn.type = 'text';
-    precioIn.name = 'precioProducto';
+    precioIn.name = 'precio';
     precioIn.value = precio;
     form.appendChild(precioIn);
 
     var detallesTA = document.createElement("textarea");
-    detallesTA.name = 'detallesProducto';
+    detallesTA.name = 'detalles';
     detallesTA.value = detalles;
     form.appendChild(detallesTA);
 
     var unidadesIn = document.createElement("input");
     unidadesIn.type = 'number';
-    unidadesIn.name = 'unidadesProducto';
+    unidadesIn.name = 'unidades';
     unidadesIn.value = unidades;
     form.appendChild(unidadesIn);
 
     var imageIn = document.createElement("input");
     imageIn.type = 'text';
-    imageIn.name = 'rutaProducto';
+    imageIn.name = 'ruta';
     imageIn.value = ruta;
     form.appendChild(imageIn);
     
     console.log(form);
     
     form.method = 'POST';
-    form.action = 'http://localhost/tecweb/practicas/p09/formulario_productos_v2.html';  
+    form.action = 'https://localhost/tecweb/practicas/p09/formulario_productos_v2.html';  
     
     document.body.appendChild(form);
     form.submit();

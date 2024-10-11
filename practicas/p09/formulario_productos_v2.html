@@ -15,10 +15,10 @@
         <form id="formularioProductos" action="./set_producto.php" method="post">
             <fieldset>
                 <legend>Información del producto</legend>
-                <label for="nombreProducto">Nombre: <input type="text" name="nombreProducto" id="nombreProducto"/></label>
+                <label for="nombre">Nombre: <input type="text" name="nombre" id="nombre"/></label>
                 <br/>
-                <label for="marcaProducto">Marca: 
-                    <select name="marcaProducto" id="marcaProducto">
+                <label for="marca">Marca: 
+                    <select name="marca" id="marca">
                         <option value="none" selected>Elige una opción</option>
                         <option value="canon">Canon</option>
                         <option value="fujifilm">Fujifilm</option>
@@ -31,17 +31,17 @@
                     </select>
                 </label>
                 <br/>
-                <label for="modeloProducto">Modelo: <input type="text" name="modeloProducto" id="modeloProducto"/></label>
+                <label for="modelo">Modelo: <input type="text" name="modelo" id="modelo"/></label>
                 <br/>
-                <label for="precioProducto">Precio: <input type="text" name="precioProducto" id="precioProducto"/></label>
+                <label for="precio">Precio: <input type="text" name="precio" id="precio"/></label>
                 <br/>
-                <label for="detallesProducto">Detalles: 
-                    <textarea name="detallesProducto" id="detallesProducto" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
+                <label for="detalles">Detalles: 
+                    <textarea name="detalles" id="detalles" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
                 </label>
                 <br/>
-                <label for="unidadesProducto">Unidades: <input type="number" name="unidadesProducto" id="unidadesProducto"/></label>
+                <label for="unidades">Unidades: <input type="number" name="unidades" id="unidades"/></label>
                 <br/>
-                <label for="rutaProducto">Ruta de la imagen del producto: <input type="text" name="rutaProducto" id="rutaProducto"></label>
+                <label for="ruta">Ruta de la imagen del producto: <input type="text" name="ruta" id="ruta"></label>
             </fieldset>
             <p>
                 <input type="submit" value="Enviar formulario" onclick="validarFormulario();"/>
