@@ -9,7 +9,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Comprobar que los campos necesarios están presentes
-        if (isset($_POST['nombre'], $_POST['marca'], $_POST['modelo'], $_POST['precio'], $_POST['unidades'], $_POST['imagen'])) {
+        if (isset($_POST['nombre'], $_POST['marca'], $_POST['modelo'], $_POST['precio'], $_POST['unidades'], $_POST['ruta'])) {
             $id = $_POST['id'];
             $nombre = $_POST['nombre'];
             $marca = $_POST['marca'];
