@@ -39,7 +39,12 @@
 					}
 					else{
 						$precio = $_POST['precio'];
-						$detalles = $_POST['detalles'];
+						if($_POST['detalles'] == 'NULL'){
+							$detalles = NULL;
+						}
+						else{
+							$detalles = $_POST['detalles'];
+						}
 						$unidades = $_POST['unidades'];
 						$imagen = $_POST['ruta'];
 
@@ -54,7 +59,7 @@
 								echo '<li><strong>Marca: </strong>' . $marca . '</li>';
 								echo '<li><strong>Modelo: </strong>' . $modelo . '</li>';
 								echo '<li><strong>Precio: </strong>' . $precio . '</li>';
-								echo '<li><strong>Detalles: </strong>' . $detalles . '</li>';
+								echo (is_null($detalles)) ? '<li><strong>Detalles: </strong><em>No hay detalles</em>' : '<li><strong>Detalles: </strong>' . $detalles;
 								echo '<li><strong>Unidades: </strong>' . $unidades . '</li>';
 								echo '<li><strong>Ruta de la imagen: </strong>' . $imagen . '</li>';
 							echo '</ul>';

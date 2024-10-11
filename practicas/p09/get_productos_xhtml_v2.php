@@ -80,7 +80,7 @@
 											echo '<td class="row-data">' . $value . '</td>';
 										}
 										if($key == 'detalles'){
-											if($value == 'NULL'){
+											if(is_null($value)){
 												echo '<td class="row-data">' . '<em>El producto no tiene detalles</em>' . '</td>';
 											}
 										}
