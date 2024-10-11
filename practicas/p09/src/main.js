@@ -132,8 +132,6 @@ function obtenerDatos(event, id){
 
 function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta){
     var form = document.createElement("form");
-    form.method = 'POST';
-    form.action = '../formulario_productos_v2.php';
 
     var nombreIn = document.createElement("input");
     nombreIn.type = 'text';
@@ -198,7 +196,7 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
     console.log(form);
     
     form.method = 'POST';
-    form.action = 'http://localhost/tecweb/practicas/p09/formulario_productos_v2.html';  
+    form.action = 'http://localhost/tecweb/practicas/p09/formulario_productos_v2.php';  
 
     document.body.appendChild(form);
     form.submit();
