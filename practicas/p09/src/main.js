@@ -1,15 +1,15 @@
 function validarFormulario(event){
-    var nombre = document.getElementById('nombreProducto');
-    var marca = document.getElementById('marcaProducto');
-    var modelo = document.getElementById('modeloProducto');
-    var precio = document.getElementById('precioProducto');
-    var detalles = document.getElementById('detallesProducto');
-    var unidades = document.getElementById('unidadesProducto');
-    var ruta = document.getElementById('rutaProducto');
+    var nombre = document.getElementById('nombre');
+    var marca = document.getElementById('marca');
+    var modelo = document.getElementById('modelo');
+    var precio = document.getElementById('precio');
+    var detalles = document.getElementById('detalles');
+    var unidades = document.getElementById('unidades');
+    var ruta = document.getElementById('ruta');
 
     console.log('Datos recibidos: ' + 
                 '\nNombre: ' + nombre.value +
-                '\nMarca: ' + marca.options[document.getElementById('marcaProducto').selectedIndex].text +
+                '\nMarca: ' + marca.options[document.getElementById('marca').selectedIndex].text +
                 '\nModelo: ' + modelo.value +
                 '\nPrecio: ' + precio.value +
                 '\nDetalles: ' + detalles.value +
@@ -78,7 +78,7 @@ function validarFormulario(event){
         var marcaIn = document.createElement("input");
         marcaIn.type = 'hidden';
         marcaIn.name = 'marca';
-        marcaIn.value = marca.options[marca.selectedIndex].text;
+        marcaIn.value = marca.options[document.getElementById('marca').selectedIndex].text;
         form.appendChild(marcaIn);
 
         var modeloIn = document.createElement("input");
@@ -112,7 +112,7 @@ function validarFormulario(event){
         form.appendChild(rutaIn);
 
         document.body.appendChild(form);
-        form.submit(); // Submit the
+        form.submit();
         }
 
         form.method = 'POST';
