@@ -91,3 +91,89 @@ window.onload = function() {
     const formulario = document.getElementById("formularioProductos");
     formulario.addEventListener("submit", validarFormulario);
 };
+
+function obtenerDatos(id){
+    var rowId = event.target.parentNode.parentNode.id;
+    var data = document.getElementById(rowId).querySelectorAll(".row-data");
+
+    var id = id;
+    var nombre = data[0].innerHTML;
+    var marca = data[1].innerHTML;
+    var modelo = data[2].innerHTML;
+    var precio = data[3].innerHTML;
+    var detalles = data[4].innerHTML;
+    var unidades = data[5].innerHTML;
+    var ruta = rowId.querySelector('img').src;
+
+    if(detalles.includes('El producto no tiene detalles')){
+        detalles = '';
+    }
+
+    if(ruta.includes('/img/default.jpg')){
+        ruta = '';
+    }
+
+    alert('Nombre: ' + nombre 
+        + '\nMarca: ' + marca
+        + '\nModelo: ' + modelo
+        + '\nPrecio: ' + precio
+        + '\nDetalles: ' + detalles
+        + '\nUnidades: ' + unidades
+        + '\nRuta: ' + ruta
+    );
+
+    sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta);
+}
+
+function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta){
+    var form = document.createElement("form");
+
+    var nombreIn = document.createElement("input");
+    nombreIn.type = 'text';
+    nombreIn.name = 'nombreProducto';
+    nombreIn.value = nombre;
+    form.appendChild(nombreIn);
+    
+    var marcaIn = document.createElement("input");
+    marcaIn.type = 'text';
+    marcaIn.name = 'marcaProducto';
+    marcaIn.value = marca;
+    form.appendChild(marcaIn);
+
+    var modeloIn = document.createElement("input");
+    modeloIn.type = 'text';
+    modeloIn.name = 'modeloProducto';
+    modeloIn.value = modelo;
+    form.appendChild(modeloIn);
+
+    var precioIn = document.createElement("input")
+    precioIn.type = 'text';
+    precioIn.name = 'precioProducto';
+    precioIn.value = precio;
+    form.appendChild(precioIn);
+
+    var detallesTA = document.createElement("textarea");
+    detallesTA.name = 'detallesProducto';
+    detallesTA.value = detalles;
+    form.appendChild(detallesTA);
+
+    var unidadesIn = document.createElement("input");
+    unidadesIn.type = 'number';
+    unidadesIn.name = 'unidadesProducto';
+    unidadesIn.value = unidades;
+    form.appendChild(unidadesIn);
+
+    var imageIn = document.createElement("input");
+    imageIn.type = 'text';
+    imageIn.name = 'rutaProducto';
+    imageIn.value = ruta;
+    form.appendChild(imageIn);
+    
+    console.log(form);
+    
+    form.method = 'POST';
+    form.action = 'http://localhost/tecweb/practicas/p09/formulario_productos_v2.html';  
+    
+    document.body.appendChild(form);
+    form.submit();
+}

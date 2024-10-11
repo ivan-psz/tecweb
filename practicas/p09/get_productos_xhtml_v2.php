@@ -62,6 +62,7 @@
 					<th scope="col">Unidades</th>
 					<th scope="col">Detalles</th>
 					<th scope="col">Imagen</th>
+					<th scope="col">Editar producto</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -71,18 +72,19 @@
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
                                     if($key == 'id'){
-                                        echo '<th scope="row">' . $data[$num][$key] = utf8_encode($value) . '</th>';
+                                        echo '<th scope="row">' . $value . '</th>';
                                     }
                                     else{
-                                        echo '<td>' . $data[$num][$key] = utf8_encode($value) . '</td>';
+                                        echo '<td>' . $value . '</td>';
                                     }
                                 }
                                 else{
                                     echo '<td>';
-                                         echo '<img src = ' . $value . '>';
+                                         echo '<img src = ' . $value . ' style="width: 200px;">';
                                     echo '</td>';
                                 }
                             }
+							echo '<td>' . '<input type="button" value="Editar"/>' . '</td>';
                             echo '</tr>';
                         }
                     ?>

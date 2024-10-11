@@ -14,6 +14,9 @@
 
 	if (!empty($tope))
 	{
+		if(!is_numeric($tope)){
+			die('El parámetro del tope debe ser un valor numérico');
+		}
 		/** SE CREA EL OBJETO DE CONEXION */
 		@$link = new mysqli('localhost', 'root', '.YcPHLGg]QCW-fX/', 'marketzone');	
 
@@ -23,8 +26,6 @@
 			die('Falló la conexión: '.$link->connect_error.'<br/>');
 			    /** NOTA: con @ se suprime el Warning para gestionar el error por medio de código */
 		}
-
-		$link->set_charset('utf8');
 		
 		/** Crear una tabla que no devuelve un conjunto de resultados */
 		if ( $result = $link->query("SELECT * FROM productos WHERE unidades <= $tope AND eliminado != 1") ) 
@@ -42,6 +43,7 @@
     <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Productos con unidades menores a <?= $tope ?></title>
+		<script src="./src/main.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	</head>
 	<body>
@@ -62,11 +64,12 @@
 					<th scope="col">Unidades</th>
 					<th scope="col">Detalles</th>
 					<th scope="col">Imagen</th>
+					<th scope="col">Editar producto</th>
 					</tr>
 				</thead>
 				<tbody>
                     <?php
-                        foreach($row as $num => $registro){
+                        foreach($row as $registro){
                             echo '<tr>';
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
@@ -77,6 +80,11 @@
 										if($key != 'eliminado'){
 											echo '<td>' . $value . '</td>';
 										}
+										if($key == 'detalles'){
+											if($value == 'NULL'){
+												echo '<td>' . '<em>El producto no tiene detalles</em>' . '</td>';
+											}
+										}
                                     }
                                 }
                                 else{
@@ -85,6 +93,7 @@
                                     echo '</td>';
                                 }
                             }
+							echo '<td>' . '<input type="button" value="Editar" onclick="obtenerDatos(' . $registro.['id'].value . ');"/>' . '</td>';
                             echo '</tr>';
                         }
                     ?>
