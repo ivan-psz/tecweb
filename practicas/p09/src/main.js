@@ -14,7 +14,7 @@ function validarFormulario(event){
                 '\nPrecio: ' + precio.value +
                 '\nDetalles: ' + detalles.value +
                 '\nUnidades: ' + unidades.value +
-                '\nRuta: ' + ruta);
+                '\nRuta: ' + ruta.value);
 
     if(nombre.value === ''){
         alert('Debes llenar el campo del nombre');
@@ -88,7 +88,7 @@ function validarFormulario(event){
     }
 }
 
-window.onload = function() {
+/*window.onload = function() {
     const formulario = document.getElementById("formularioProductos");
     formulario.addEventListener("submit", validarFormulario);
-};
+};*/
