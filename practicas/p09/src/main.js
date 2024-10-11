@@ -18,62 +18,62 @@ function validarFormulario(event){
 
     if(nombre.value === ''){
         alert('Debes llenar el campo del nombre');
-        nombre.focus();
         event.preventDefault();
+        nombre.focus();
         return false;
     }
     if(nombre.value.length > 100){
         alert('El nombre no debe exceder los 100 caracteres');
-        nombre.focus();
         event.preventDefault();
+        nombre.focus();
         return false;
     }
-    if(marca.value === ''){
+    if(marca.value === 'none'){
         alert('Debes seleccionar un valor para la marca');
-        marca.focus();
         event.preventDefault();
+        marca.focus();
         return false;
     }
     if(modelo.value === ''){
         alert('Debes llenar el campo del modelo');
-        modelo.focus();
         event.preventDefault();
+        modelo.focus();
         return false;
     }
     if(modelo.value.length > 25){
         alert('El modelo no debe exceder los 25 caracteres');
-        modelo.focus();
         event.preventDefault();
+        modelo.focus();
         return false;
     }
     if(!modelo.value.match(/^[a-zA-Z0-9]+$/i)){
         alert('El modelo debe ser un texto alfanumérico');
-        modelo.focus();
         event.preventDefault();
+        modelo.focus();
         return false;
     }
     if(precio.value === ''){
         alert('Debes llenar el campo del precio');
-        precio.focus();
         event.preventDefault();
+        precio.focus();
         return false;
     }
     if(!precio.value.match(/^\d{3,8}\.\d{2}$/)){
         alert('El precio debe ser de tres dígitos a ocho y debe tener dos cifras en los centavos, por ejemplo, 100.00');
-        precio.focus();
         event.preventDefault();
+        precio.focus();
         return false;
     }
     if(detalles.value.length > 250){
         alert('Los detalles no deben exceder los 250 caracteres');
-        detalles.focus();
         event.preventDefault();
+        detalles.focus();
         return false;
     }
     if(isNaN(unidades.value) || unidades.value < 0){
         alert ('Las unidades deben ser un número mayor o igual a cero');
-        unidades.focus();
         event.preventDefault();
+        unidades.focus();
         return false;
     }
 

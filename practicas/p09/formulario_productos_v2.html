@@ -15,42 +15,33 @@
         <form id="formularioProductos" action="./set_producto.php" method="post">
             <fieldset>
                 <legend>Información del producto</legend>
-                <ul>
-                    <li>
-                        <label for="nombreProducto">Nombre: <input type="text" name="nombreProducto" id="nombreProducto"/></label>
-                    </li>
-                    <li>
-                        <label for="marcaProducto">Marca: 
-                            <select name="marcaProducto" id="marcaProducto">
-                                <option value="canon">Canon</option>
-                                <option value="fujifilm">Fujifilm</option>
-                                <option value="hasselblad">Hasselblad</option>
-                                <option value="leica">Leica</option>
-                                <option value="nikon">Nikon</option>
-                                <option value="olympus">Olympus</option>
-                                <option value="pentax">Pentax</option>
-                                <option value="sony">Sony</option>
-                            </select>
-                        </label>
-                    </li>
-                    <li>
-                        <label for="modeloProducto">Modelo: <input type="text" name="modeloProducto" id="modeloProducto"/></label>
-                    </li>
-                    <li>
-                        <label for="precioProducto">Precio: <input type="text" name="precioProducto" id="precioProducto"/></label>
-                    </li>
-                    <li>
-                        <label for="detallesProductos">Detalles: 
-                            <textarea name="detallesProducto" id="detallesProducto" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
-                        </label>
-                    </li>
-                    <li>
-                        <label for="unidadesProducto">Unidades: <input type="number" name="unidadesProducto" id="unidadesProducto"/></label>
-                    </li>
-                    <li>
-                        <label for="rutaProducto">Ruta de la imagen del producto: <input type="text" name="rutaProducto" id="rutaProducto"></label>
-                    </li>
-                </ul>
+                <label for="nombreProducto">Nombre: <input type="text" name="nombreProducto" id="nombreProducto"/></label>
+                <br/>
+                <label for="marcaProducto">Marca: 
+                    <select name="marcaProducto" id="marcaProducto">
+                        <option value="none">Elige una opción</option>
+                        <option value="canon">Canon</option>
+                        <option value="fujifilm">Fujifilm</option>
+                        <option value="hasselblad">Hasselblad</option>
+                        <option value="leica">Leica</option>
+                        <option value="nikon">Nikon</option>
+                        <option value="olympus">Olympus</option>
+                        <option value="pentax">Pentax</option>
+                        <option value="sony">Sony</option>
+                    </select>
+                </label>
+                <br/>
+                <label for="modeloProducto">Modelo: <input type="text" name="modeloProducto" id="modeloProducto"/></label>
+                <br/>
+                <label for="precioProducto">Precio: <input type="text" name="precioProducto" id="precioProducto"/></label>
+                <br/>
+                <label for="detallesProducto">Detalles: 
+                    <textarea name="detallesProducto" id="detallesProducto" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
+                </label>
+                <br/>
+                <label for="unidadesProducto">Unidades: <input type="number" name="unidadesProducto" id="unidadesProducto"/></label>
+                <br/>
+                <label for="rutaProducto">Ruta de la imagen del producto: <input type="text" name="rutaProducto" id="rutaProducto"></label>
             </fieldset>
             <p>
                 <input type="submit" value="Enviar formulario" onclick="validarFormulario();"/>
