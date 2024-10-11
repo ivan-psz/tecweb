@@ -10,9 +10,9 @@
         <?php
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 @$link = new mysqli('localhost', 'root', '.YcPHLGg]QCW-fX/', 'marketzone');
-				$nombre = $_POST['nombre'];
-				$marca = $_POST['marca'];
-				$modelo = $_POST['modelo'];
+				$nombre = $_POST['nombreProducto'];
+				$marca = $_POST['marcaProducto'];
+				$modelo = $_POST['modeloProducto'];
 	
 				if ($link->connect_errno){
 					die('Falló la conexión: '.$link->connect_error.'<br/>');
@@ -38,10 +38,10 @@
 						echo '<p>Intente registrar uno nuevo.</p>';
 					}
 					else{
-						$precio = $_POST['precio'];
-						$detalles = $_POST['detalles'];
-						$unidades = $_POST['unidades'];
-						$imagen = $_POST['imagen'];
+						$precio = $_POST['precioProducto'];
+						$detalles = $_POST['detallesProducto'];
+						$unidades = $_POST['unidadesProducto'];
+						$imagen = $_POST['rutaProducto'];
 
 						//$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', '0')";
 						$sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) values ('{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";

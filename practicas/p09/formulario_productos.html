@@ -15,26 +15,42 @@
         <form id="formularioProductos" action="./set_producto.php" method="post">
             <fieldset>
                 <legend>Información del producto</legend>
-                <label for="nombreProducto">Nombre: <input type="text" name="nombreProducto" id="nombreProducto"/></label>
-                <label for="marcaProducto">Marca: 
-                    <select name="marcaProducto" id="marcaProducto">
-                        <option value="canon">Canon</option>
-                        <option value="fujifilm">Fujifilm</option>
-                        <option value="hasselblad">Hasselblad</option>
-                        <option value="leica">Leica</option>
-                        <option value="nikon">Nikon</option>
-                        <option value="olympus">Olympus</option>
-                        <option value="pentax">Pentax</option>
-                        <option value="sony">Sony</option>
-                    </select>
-                </label>
-                <label for="modeloProducto">Modelo: <input type="text" name="modeloProducto" id="modeloProducto"/></label>
-                <label for="precioProducto">Precio: <input type="text" name="precioProducto" id="precioProducto"/></label>
-                <label for="detallesProductos">Detalles: 
-                    <textarea name="detallesProductos" id="detallesProductos" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
-                </label>
-                <label for="unidadesProducto">Unidades: <input type="number" name="unidadesProducto" id="unidadesProducto"/></label>
-                <label for="rutaProducto">Ruta del producto: <input type="text" name="rutaProducto" id="rutaProducto"></label>
+                <ul>
+                    <li>
+                        <label for="nombreProducto">Nombre: <input type="text" name="nombreProducto" id="nombreProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="marcaProducto">Marca: 
+                            <select name="marcaProducto" id="marcaProducto">
+                                <option value="canon">Canon</option>
+                                <option value="fujifilm">Fujifilm</option>
+                                <option value="hasselblad">Hasselblad</option>
+                                <option value="leica">Leica</option>
+                                <option value="nikon">Nikon</option>
+                                <option value="olympus">Olympus</option>
+                                <option value="pentax">Pentax</option>
+                                <option value="sony">Sony</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="modeloProducto">Modelo: <input type="text" name="modeloProducto" id="modeloProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="precioProducto">Precio: <input type="text" name="precioProducto" id="precioProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="detallesProductos">Detalles: 
+                            <textarea name="detallesProductos" id="detallesProductos" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="unidadesProducto">Unidades: <input type="number" name="unidadesProducto" id="unidadesProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="rutaProducto">Ruta del producto: <input type="text" name="rutaProducto" id="rutaProducto"></label>
+                    </li>
+                </ul>
             </fieldset>
             <p>
                 <input type="submit" value="Enviar formulario" onclick="validar();"/>
