@@ -93,8 +93,8 @@ window.onload = function() {
 };
 
 function obtenerDatos(event, id){
-    var rowId = event.target.closest('tr').id;
-    var data = document.getElementById(rowId).querySelectorAll(".row-data");
+    var row = event.target.closest('tr');
+    var data = row.querySelectorAll(".row-data"); 
 
     var id = data[0].innerHTML;
     var nombre = data[1].innerHTML;
