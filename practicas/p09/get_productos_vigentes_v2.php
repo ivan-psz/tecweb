@@ -93,7 +93,7 @@
                                     echo '</td>';
                                 }
                             }
-							echo '<td>' . '<input type="button" value="Editar" onclick="obtenerDatos();"/>' . '</td>';
+							echo '<td>' . '<input type="button" value="Editar" onclick="obtenerDatos(event,'. $registro['id'] .');"/>' . '</td>';
                             echo '</tr>';
                         }
                     ?>

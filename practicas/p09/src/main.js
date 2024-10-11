@@ -92,9 +92,10 @@ window.onload = function() {
     formulario.addEventListener("submit", validarFormulario);
 };
 
-function obtenerDatos(id){
-    var rowId = event.target.parentNode.parentNode.id;
-    var data = document.getElementById(rowId).querySelectorAll(".row-data");
+function obtenerDatos(event, id){
+    var row = event.target.closest('tr');
+    var rowId = row.id;
+    var data = row.querySelectorAll(".row-data"); 
 
     var id = id;
     var nombre = data[0].innerHTML;
