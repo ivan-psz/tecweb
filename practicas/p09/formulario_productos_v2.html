@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro de productos</title>
+        <script src="./src/main.js"></script>
+        <link rel="stylesheet" href="./styles/styles.css"/>
+    </head>
+    <body>
+        <div class="titulo">
+            <h3>Registro de nuevo producto</h3>
+        </div>
+        <p>Ingresa la información que a continuación se te solicita.</p>
+        <form id="formularioProductos" action="./set_producto.php" method="post">
+            <fieldset>
+                <legend>Información del producto</legend>
+                <ul>
+                    <li>
+                        <label for="nombreProducto">Nombre: <input type="text" name="nombreProducto" id="nombreProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="marcaProducto">Marca: 
+                            <select name="marcaProducto" id="marcaProducto">
+                                <option value="canon">Canon</option>
+                                <option value="fujifilm">Fujifilm</option>
+                                <option value="hasselblad">Hasselblad</option>
+                                <option value="leica">Leica</option>
+                                <option value="nikon">Nikon</option>
+                                <option value="olympus">Olympus</option>
+                                <option value="pentax">Pentax</option>
+                                <option value="sony">Sony</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="modeloProducto">Modelo: <input type="text" name="modeloProducto" id="modeloProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="precioProducto">Precio: <input type="text" name="precioProducto" id="precioProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="detallesProductos">Detalles: 
+                            <textarea name="detallesProducto" id="detallesProducto" cols="50" rows="4" placeholder="Máximo 250 caracteres"></textarea>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="unidadesProducto">Unidades: <input type="number" name="unidadesProducto" id="unidadesProducto"/></label>
+                    </li>
+                    <li>
+                        <label for="rutaProducto">Ruta de la imagen del producto: <input type="text" name="rutaProducto" id="rutaProducto"></label>
+                    </li>
+                </ul>
+            </fieldset>
+            <p>
+                <input type="submit" value="Enviar formulario" onclick="validarFormulario();"/>
+                <input type="reset" value="Limpiar formulario">
+            </p>
+        </form>
+    </body>
+</html>
+
