@@ -94,16 +94,15 @@ window.onload = function() {
 
 function obtenerDatos(event, id){
     var row = event.target.closest('tr');
-    var rowId = row.id;
     var data = row.querySelectorAll(".row-data"); 
 
-    var id = id;
-    var nombre = data[0].innerHTML;
-    var marca = data[1].innerHTML;
-    var modelo = data[2].innerHTML;
-    var precio = data[3].innerHTML;
-    var detalles = data[4].innerHTML;
-    var unidades = data[5].innerHTML;
+    var id = data[0].innerHTML;
+    var nombre = data[1].innerHTML;
+    var marca = data[2].innerHTML;
+    var modelo = data[3].innerHTML;
+    var precio = data[4].innerHTML;
+    var detalles = data[5].innerHTML;
+    var unidades = data[6].innerHTML;
     var ruta = rowId.querySelector('img').src;
 
     if(detalles.includes('El producto no tiene detalles')){

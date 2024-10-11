@@ -74,21 +74,21 @@
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
                                     if($key == 'id'){
-                                        echo '<th scope="row">' . $value . '</th>';
+                                        echo '<th scope="row" class="row-data">' . $value . '</th>';
                                     }
                                     else{
 										if($key != 'eliminado'){
-											echo '<td>' . $value . '</td>';
+											echo '<td class="row-data">' . $value . '</td>';
 										}
 										if($key == 'detalles'){
 											if($value == 'NULL'){
-												echo '<td>' . '<em>El producto no tiene detalles</em>' . '</td>';
+												echo '<td class="row-data">' . '<em>El producto no tiene detalles</em>' . '</td>';
 											}
 										}
                                     }
                                 }
                                 else{
-                                    echo '<td>';
+                                    echo '<td class="row-data">';
                                          echo '<img src = ' . $value . ' style="width: 200px;">';
                                     echo '</td>';
                                 }
