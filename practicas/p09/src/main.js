@@ -96,7 +96,6 @@ function obtenerDatos(event, id){
     var row = event.target.closest('tr');
     var data = row.querySelectorAll(".row-data"); 
 
-    var id = data[0].innerHTML;
     var nombre = data[1].innerHTML;
     var marca = data[2].innerHTML;
     var modelo = data[3].innerHTML;
@@ -190,8 +189,8 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
     console.log(form);
     
     form.method = 'POST';
-    form.action = 'https://localhost/tecweb/practicas/p09/formulario_productos_v2.html';  
-    
+    form.action = 'http://localhost/tecweb/practicas/p09/formulario_productos_v2.html';  
+
     document.body.appendChild(form);
     form.submit();
 }
