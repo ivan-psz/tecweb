@@ -18,73 +18,108 @@ function validarFormulario(event){
 
     if(nombre.value === ''){
         alert('Debes llenar el campo del nombre');
-        event.preventDefault();
         nombre.focus();
-        return false;
-    }
-    if(nombre.value.length > 100){
+        event.preventDefault();
+    } 
+    else if(nombre.value.length > 100){
         alert('El nombre no debe exceder los 100 caracteres');
-        event.preventDefault();
         nombre.focus();
-        return false;
-    }
-    if(marca.value === 'none'){
+        event.preventDefault();
+    } 
+    else if(marca.value === 'none'){
         alert('Debes seleccionar un valor para la marca');
-        event.preventDefault();
         marca.focus();
-        return false;
-    }
-    if(modelo.value === ''){
+        event.preventDefault();
+    } 
+    else if(modelo.value === ''){
         alert('Debes llenar el campo del modelo');
-        event.preventDefault();
         modelo.focus();
-        return false;
-    }
-    if(modelo.value.length > 25){
+        event.preventDefault();
+    } 
+    else if(modelo.value.length > 25){
         alert('El modelo no debe exceder los 25 caracteres');
-        event.preventDefault();
         modelo.focus();
-        return false;
-    }
-    if(!modelo.value.match(/^[a-zA-Z0-9]+$/i)){
+        event.preventDefault();
+    } 
+    else if(!modelo.value.match(/^[a-zA-Z0-9]+$/i)){
         alert('El modelo debe ser un texto alfanumérico');
-        event.preventDefault();
         modelo.focus();
-        return false;
-    }
-    if(precio.value === ''){
+        event.preventDefault();
+    } 
+    else if(precio.value === ''){
         alert('Debes llenar el campo del precio');
-        event.preventDefault();
         precio.focus();
-        return false;
-    }
-    if(!precio.value.match(/^\d{3,8}\.\d{2}$/)){
+        event.preventDefault();
+    } 
+    else if(!precio.value.match(/^\d{3,8}\.\d{2}$/)){
         alert('El precio debe ser de tres dígitos a ocho y debe tener dos cifras en los centavos, por ejemplo, 100.00');
-        event.preventDefault();
         precio.focus();
-        return false;
-    }
-    if(detalles.value.length > 250){
+        event.preventDefault();
+    } 
+    else if(detalles.value.length > 250){
         alert('Los detalles no deben exceder los 250 caracteres');
-        event.preventDefault();
         detalles.focus();
-        return false;
-    }
-    if(isNaN(unidades.value) || unidades.value < 0){
-        alert ('Las unidades deben ser un número mayor o igual a cero');
         event.preventDefault();
+    } 
+    else if(isNaN(unidades.value) || unidades.value < 0){
+        alert ('Las unidades deben ser un número mayor o igual a cero');
         unidades.focus();
-        return false;
+        event.preventDefault();
     }
+    else{
+        var form = document.createElement("form");
 
-    if(detalles.value === ''){
-        detalles.value = 'NULL';
-    }
-    if(ruta.value === ''){
-        ruta.value = 'img/default.jpg';
-    }
-    console.log('Se pasó la validación.');
-    return true;
+        var nombreIn = document.createElement("input");
+        nombreIn.type = 'hidden';
+        nombreIn.name = 'nombre';
+        nombreIn.value = nombre.value;
+        form.appendChild(nombreIn);
+
+        var marcaIn = document.createElement("input");
+        marcaIn.type = 'hidden';
+        marcaIn.name = 'marca';
+        marcaIn.value = marca.options[marca.selectedIndex].text;
+        form.appendChild(marcaIn);
+
+        var modeloIn = document.createElement("input");
+        modeloIn.type = 'hidden';
+        modeloIn.name = 'modelo';
+        modeloIn.value = modelo.value;
+        form.appendChild(modeloIn);
+
+        var precioIn = document.createElement("input");
+        precioIn.type = 'hidden';
+        precioIn.name = 'precio';
+        precioIn.value = precio.value;
+        form.appendChild(precioIn);
+
+        var detallesIn = document.createElement("input");
+        detallesIn.type = 'hidden';
+        detallesIn.name = 'detalles';
+        detallesIn.value = detalles.value === '' ? 'NULL' : detalles.value;
+        form.appendChild(detallesIn);
+
+        var unidadesIn = document.createElement("input");
+        unidadesIn.type = 'hidden';
+        unidadesIn.name = 'unidades';
+        unidadesIn.value = unidades.value;
+        form.appendChild(unidadesIn);
+
+        var rutaIn = document.createElement("input");
+        rutaIn.type = 'hidden';
+        rutaIn.name = 'ruta';
+        rutaIn.value = ruta.value === '' ? 'img/default.jpg' : ruta.value;
+        form.appendChild(rutaIn);
+
+        document.body.appendChild(form);
+        form.submit(); // Submit the
+        }
+
+        form.method = 'POST';
+        form.action = './set_producto.php';
+
+        document.body.appendChild(form);
+        form.submit();
 }
 
 window.onload = function() {
