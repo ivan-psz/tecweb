@@ -63,25 +63,31 @@
 					<th scope="col">Unidades</th>
 					<th scope="col">Detalles</th>
 					<th scope="col">Imagen</th>
-					<th scope="col">¿Está eliminado?</th>
 					<th scope="col">Editar producto</th>
 					</tr>
 				</thead>
 				<tbody>
                     <?php
-                        foreach($row as $num => $registro){
+                        foreach($row as $registro){
                             echo '<tr>';
                             foreach($registro as $key => $value){
                                 if($key != 'imagen'){
                                     if($key == 'id'){
-                                        echo '<th scope="row">' . $value . '</th>';
+                                        echo '<th scope="row"> class="row-data">' . $value . '</th>';
                                     }
                                     else{
-                                        echo '<td>' . $value . '</td>';
+                                        if($key != 'eliminado'){
+											echo '<td class="row-data">' . $value . '</td>';
+										}
+										if($key == 'detalles'){
+											if($value == 'NULL'){
+												echo '<td class="row-data">' . '<em>El producto no tiene detalles</em>' . '</td>';
+											}
+										}
                                     }
                                 }
                                 else{
-                                    echo '<td>';
+                                    echo '<td class="row-data">';
                                          echo '<img src = ' . $value . ' style="width: 200px;">';
                                     echo '</td>';
                                 }
