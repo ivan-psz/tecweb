@@ -181,7 +181,7 @@ function sendToForm(id, nombre, marca, modelo, precio, detalles, unidades, ruta)
 
     var detallesTA = document.createElement("textarea");
     detallesTA.name = 'detalles';
-    detallesTA.id = 'detalles';
+    detallesTA.id = 'detalles'; 
     detallesTA.innerHTML = detalles;
     form.appendChild(detallesTA);
 
