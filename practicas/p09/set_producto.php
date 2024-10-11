@@ -59,7 +59,7 @@
 								echo '<li><strong>Marca: </strong>' . $marca . '</li>';
 								echo '<li><strong>Modelo: </strong>' . $modelo . '</li>';
 								echo '<li><strong>Precio: </strong>' . $precio . '</li>';
-								echo '<li><strong>Detalles: </strong>' . $detalles . '</li>';
+								echo '<li><strong>Detalles: </strong>' . (is_null($detalles))? '<em>No hay detalles</em>' : $detalles . '</li>';
 								echo '<li><strong>Unidades: </strong>' . $unidades . '</li>';
 								echo '<li><strong>Ruta de la imagen: </strong>' . $imagen . '</li>';
 							echo '</ul>';
