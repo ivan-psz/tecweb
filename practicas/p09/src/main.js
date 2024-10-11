@@ -93,8 +93,8 @@ window.onload = function() {
 };
 
 function obtenerDatos(event, id){
-    var row = event.target.closest('tr');
-    var data = row.querySelectorAll(".row-data"); 
+    var rowId = event.target.closest('tr').id;
+    var data = document.getElementById(rowId).querySelectorAll(".row-data");
 
     var id = data[0].innerHTML;
     var nombre = data[1].innerHTML;
@@ -103,7 +103,7 @@ function obtenerDatos(event, id){
     var precio = data[4].innerHTML;
     var detalles = data[5].innerHTML;
     var unidades = data[6].innerHTML;
-    var ruta = rowId.querySelector('img').src;
+    var ruta = data[7].querySelector('img').src;;
 
     if(detalles.includes('El producto no tiene detalles')){
         detalles = '';
