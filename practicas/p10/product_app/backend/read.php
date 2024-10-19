@@ -10,7 +10,7 @@
         if ( $result = $conexion->query("SELECT 
                                             * 
                                         FROM productos 
-                                        WHERE id = '$id') {
+                                        WHERE id = '$id'")) {
             // SE OBTIENEN LOS RESULTADOS
 			$row = $result->fetch_array(MYSQLI_ASSOC);
             
