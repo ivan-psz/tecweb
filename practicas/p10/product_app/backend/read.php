@@ -5,8 +5,8 @@
     $data = array();
 
     // SE VERIFICA HABER RECIBIDO EL ID
-    if( isset($_POST['parametro']) ) {
-        $p = $_POST['parametro'];
+    if( isset($_POST['search']) ) {
+        $p = $_POST['search'];
         // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
         if ( $result = $conexion->query("SELECT * FROM productos WHERE nombre LIKE '%$p%' OR marca LIKE '%$p%' OR detalles LIKE '%$p%'")) {
             // SE OBTIENEN LOS RESULTADOS
