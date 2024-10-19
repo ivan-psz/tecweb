@@ -12,17 +12,10 @@
         if ( $result = $conexion->query("SELECT * FROM productos WHERE nombre LIKE '%{$p}%' OR marca LIKE '%{$p}%' OR detalles LIKE '%{$p}%'")) {
             // SE OBTIENEN LOS RESULTADOS
             
-			$row = $result->fetch_array(MYSQLI_ASSOC);
-            
-            var_dump($row);
-
-            if(!is_null($row)) {
-                // SE CODIFICAN A UTF-8 LOS DATOS Y SE MAPEAN AL ARREGLO DE RESPUESTA
-                foreach($row as $key => $value) {
-                    $data[$key] = $value;
-                }
-                var_dump($data);
+			while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                $data[] = $row;
             }
+
 			$result->free();
 		} else {
             die('Query Error: '.mysqli_error($conexion));
