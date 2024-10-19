@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Product App</title>
+        <script src="./app.js"></script>
+    </head>
+    <body onload="init()">
+        
+        <nav>
+            <a href="#">
+                Product App
+            </a>
+            <ul></ul>
+            <form>
+                <input type="search" name="search" id="search" placeholder="Nombre/Marca/Detalles"/>
+                <button type="submit" onclick="buscarProducto(event)">Buscar</button>
+            </form>
+        </nav>
+
+        <div>
+            <div>
+                <form id="task-form">
+                    <div>
+                        <input type="text" id="name" placeholder="Nombre del producto"/>
+                    </div>
+                    <div>
+                        <textarea id="description" cols="30" rows="10" placeholder="JSON de producto"></textarea>
+                    </div>
+                    <input type="hidden" id="taskId"/>
+                    <button type="submit" onclick="agregarProducto(event)">
+                        Agregar producto
+                    </button>
+                </form>
+            </div>
+
+            <div>
+                <ul></ul>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nombre</td>
+                            <td>Descripción</td>
+                        </tr>
+                    </thead>
+                    <tbody id="productos">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>
