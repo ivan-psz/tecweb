@@ -100,9 +100,12 @@ function buscarProducto(e){
                 // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
                 document.getElementById("productos").innerHTML = template;
             }
+            else{
+                document.getElementById("productos").innerHTML = '<tr><td colspan="3">No se encontraron productos.</td></tr>';
+            }
         }
     };
-    client.send("parametro="+parametro);
+    client.send("search="+parametro);
 }
 
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
