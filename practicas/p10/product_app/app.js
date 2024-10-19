@@ -71,25 +71,24 @@ function buscarProducto(e){
     client.onreadystatechange = function () {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
-            console.log('[CLIENTE]\n' + client.responseText);
-
-            // SE OBTIENE EL ARRAY DE PRODUCTOS A PARTIR DE UN STRING JSON
-            let productos = JSON.parse(client.responseText);
-
+            console.log('[CLIENTE]\n'+client.responseText);
+            
+            // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
+            let productos = JSON.parse(client.responseText);    // similar a eval('('+client.responseText+')');
+            
             // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
-            if (Object.keys(productos).length > 0) {
+            if(Object.keys(productos).length > 0) {
+                // SE CREA UNA PLANTILLA PARA CREAR LA(S) FILA(S) A INSERTAR EN EL DOCUMENTO HTML
                 let template = '';
-
-                // SE ITERA SOBRE LOS PRODUCTOS Y SE CREA UNA FILA POR CADA UNO
+                // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
                 productos.forEach(producto => {
                     let descripcion = '';
-                    descripcion += '<li>precio: ' + producto.precio + '</li>';
-                    descripcion += '<li>unidades: ' + producto.unidades + '</li>';
-                    descripcion += '<li>modelo: ' + producto.modelo + '</li>';
-                    descripcion += '<li>marca: ' + producto.marca + '</li>';
-                    descripcion += '<li>detalles: ' + producto.detalles + '</li>';
-
-                    // SE CREA UNA PLANTILLA PARA CREAR LA(S) FILA(S) A INSERTAR EN EL DOCUMENTO HTML
+                    descripcion += '<li>precio: '+producto.precio+'</li>';
+                    descripcion += '<li>unidades: '+producto.unidades+'</li>';
+                    descripcion += '<li>modelo: '+producto.modelo+'</li>';
+                    descripcion += '<li>marca: '+producto.marca+'</li>';
+                    descripcion += '<li>detalles: '+producto.detalles+'</li>';
+                    
                     template += `
                         <tr>
                             <td>${producto.id}</td>
@@ -101,13 +100,10 @@ function buscarProducto(e){
 
                 // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
                 document.getElementById("productos").innerHTML = template;
-            } else {
-                // SI NO HAY PRODUCTOS, SE MUESTRA UN MENSAJE
-                document.getElementById("productos").innerHTML = '<tr><td colspan="3">No se encontraron productos.</td></tr>';
             }
         }
     };
-    client.send("parametro=" + encodeURIComponent(parametro));
+    client.send("parametro="+parametro);
 }
 
 
