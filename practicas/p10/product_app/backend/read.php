@@ -8,7 +8,7 @@
     if( isset($_POST['search']) ) {
         $p = $_POST['search'];
         // SE REALIZA LA QUERY DE BÚSQUEDA Y AL MISMO TIEMPO SE VALIDA SI HUBO RESULTADOS
-        if ( $result = $conexion->query("SELECT * FROM productos WHERE nombre LIKE '%$p%' OR marca LIKE '%$p%' OR detalles LIKE '%$p%'")) {
+        if ( $result = $conexion->query("SELECT * FROM productos WHERE nombre LIKE '%{$p}%' OR marca LIKE '%{$p}%' OR detalles LIKE '%{$p}%'")) {
             // SE OBTIENEN LOS RESULTADOS
 			$row = $result->fetch_array(MYSQLI_ASSOC);
             
