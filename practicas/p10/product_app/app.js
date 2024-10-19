@@ -79,9 +79,8 @@ function buscarProducto(e){
             
             // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
             if(Object.keys(productos).length > 0) {
-                // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
                 let template = '';
-                // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
+                
                 productos.forEach(producto => {
                     let descripcion = '';
                     descripcion += '<li>precio: '+producto.precio+'</li>';
@@ -107,8 +106,9 @@ function buscarProducto(e){
             }
         }
     };
-    client.send("search="+parametro);
+    client.send("parametro="+parametro);
 }
+
 
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
 function agregarProducto(e) {
