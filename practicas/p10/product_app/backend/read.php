@@ -1,5 +1,5 @@
 <?php
-    include_once __DIR__.'./database.php';
+    include_once __DIR__.'/database.php';
     $data = array();
 
     if(isset($_POST['parametro'])){
