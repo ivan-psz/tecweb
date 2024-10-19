@@ -102,7 +102,7 @@ function buscarProducto(e){
             }
         }
     };
-    client.send("id="+id);
+    client.send("parametro="+parametro);
 }
 
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
