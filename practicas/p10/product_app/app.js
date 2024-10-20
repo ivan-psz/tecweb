@@ -91,6 +91,8 @@ function buscarProducto(e){
 function validarJSON(json){
 
     const marcasValidas = ['Canon', 'Fujifilm', 'Hasselblad', 'Leica', 'Nikon', 'Olympus', 'Pentax', 'Sony'];
+    const regexModelo = /^[a-zA-Z0-9-]+$/;
+    const regexPrecio = /^\d{3,8}\.\d{2}$/;
 
     var nombre = json['nombre'];
     var marca = json['marca'];
@@ -129,7 +131,7 @@ function validarJSON(json){
         alert('El modelo no debe exceder los 25 caracteres');
         return 2;
     } 
-    else if(!modelo.match(/^[a-zA-Z0-9]+$/i)){
+    else if(!regexModelo.test(modelo)){
         alert('El modelo debe ser un texto alfanumérico');
         return 2;
     } 
@@ -137,7 +139,7 @@ function validarJSON(json){
         alert('Debes llenar el campo del precio');
         return 2;
     } 
-    else if(!precio.match(/^\d{3,8}\.\d{2}$/)){
+    else if(!regexPrecio.test(precio)){
         alert('El precio debe ser de tres dígitos a ocho y debe tener dos cifras en los centavos, por ejemplo, 100.00');
         return 2;
     } 
@@ -169,7 +171,8 @@ function agregarProducto(e){
 
     var finalJSON = JSON.parse(productoJsonString);
     finalJSON['nombre'] = document.getElementById('name').value;
-    console.log('finalJSON:\n' + finalJSON);
+    console.log('finalJSON:\n');
+    console.table(finalJSON);
 
     var resultadoValidacion = validarJSON(finalJSON);
 
