@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+nav {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+nav form {
+    display: flex;
+}
+
+nav input[type="search"] {
+    padding: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+nav button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #e7e7e7;
+}
+
+/* Form Styles */
+#task-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#task-form input[type="text"],
+#task-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#task-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#task-form button:hover {
+    background-color: #218838;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #d1ecf1;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav form {
+        width: 100%;
+    }
+
+    #task-form {
+        padding: 10px;
+    }
+
+    #task-form input[type="text"],
+    #task-form textarea {
+        font-size: 14px;
+    }
+
+    #task-form button {
+        width: 100%;
+    }
+}
