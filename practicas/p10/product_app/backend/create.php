@@ -5,7 +5,7 @@
     if(!empty($producto)){
         $jsonObj = json_decode($producto);
 
-        echo "Objeto recibido: \n"; 
+        echo "Objeto recibido: \n\n"; 
         echo var_dump($jsonObj);
 
         if(is_null($jsonObj)){
@@ -16,7 +16,7 @@
             $query = "SELECT * FROM productos WHERE nombre = '{$jsonObj->nombre}' AND eliminado = 0";
             if($result = $conexion->query($query)){
                 if($result->num_rows > 0){
-                    echo "\n\nEl producto ya existe dentro de la base de datos";
+                    echo "\nEl producto ya existe dentro de la base de datos";
                 }
                 else{
                     $nombre = $jsonObj->nombre;
@@ -29,10 +29,10 @@
 
                     $query = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES ('{$nombre}', '{$marca}', '{$modelo}', '{$precio}', '{$detalles}', '{$unidades}', '{$ruta}')";
                     if($conexion->query($query)){
-                        echo "\n\nProducto insertado";
+                        echo "\nProducto insertado";
                     }
                     else{
-                        echo "\n\nError al insertar el producto";
+                        echo "\nError al insertar el producto";
                     }
                 }
                 $result -> free();
