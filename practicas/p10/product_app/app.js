@@ -91,9 +91,8 @@ function buscarProducto(e){
 function validarJSON(json){
 
     const marcasValidas = ['Canon', 'Fujifilm', 'Hasselblad', 'Leica', 'Nikon', 'Olympus', 'Pentax', 'Sony'];
-    const regexModelo = /^[a-zA-Z0-9-]+$/;
-    const regexPrecio = /^\d{3,8}\.\d{2}$/;
-
+    const regexModelo = /^[a-zA-Z0-9-\s]+$/;
+    
     var nombre = json['nombre'];
     var marca = json['marca'];
     var modelo = json['modelo'];
@@ -139,8 +138,8 @@ function validarJSON(json){
         alert('Debes llenar el campo del precio');
         return 2;
     } 
-    else if(!regexPrecio.test(precio)){
-        alert('El precio debe ser de tres dígitos a ocho y debe tener dos cifras en los centavos, por ejemplo, 100.00');
+    else if(isNaN(precio) || precio <= 99.99){
+        alert('El precio debe ser mayor a 99.99');
         return 2;
     } 
     else if(detalles.length > 250){
