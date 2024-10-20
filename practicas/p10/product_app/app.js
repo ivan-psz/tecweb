@@ -87,3 +87,126 @@ function buscarProducto(e){
     };
     client.send('parametro=' + parametro);
 }
+
+function validarJSON(json){
+
+    const marcasValidas = ['Canon', 'Fujifilm', 'Hasselblad', 'Leica', 'Nikon', 'Olympus', 'Pentax', 'Sony'];
+
+    var nombre = json['nombre'];
+    var marca = json['marca'];
+    var modelo = json['modelo'];
+    var precio = json['precio'];
+    var detalles = json['detalles'];
+    var unidades = parseInt(json['unidades']);
+    var ruta = json['imagen'];
+
+    console.log('Datos recibidos en función validarJSON: ' + 
+        '\nNombre: ' + nombre +
+        '\nMarca: ' + marca +
+        '\nModelo: ' + modelo +
+        '\nPrecio: ' + precio +
+        '\nDetalles: ' + detalles +
+        '\nUnidades: ' + unidades +
+        '\nRuta: ' + ruta);
+
+    if(nombre === ''){
+        alert('Debes llenar el campo del nombre');
+        return 1;
+    } 
+    else if(nombre.length > 100){
+        alert('El nombre no debe exceder los 100 caracteres');
+        return 1;
+    } 
+    else if(!marcasValidas.includes(marca)){
+        alert('Debes llenar el campo para la marca o poner una marca válida');
+        return 2;
+    } 
+    else if(modelo === '' || modelo === 'XX-000'){
+        alert('Debes llenar el campo del modelo');
+        return 2;
+    } 
+    else if(modelo.length > 25){
+        alert('El modelo no debe exceder los 25 caracteres');
+        return 2;
+    } 
+    else if(!modelo.match(/^[a-zA-Z0-9]+$/i)){
+        alert('El modelo debe ser un texto alfanumérico');
+        return 2;
+    } 
+    else if(precio === ''){
+        alert('Debes llenar el campo del precio');
+        return 2;
+    } 
+    else if(!precio.match(/^\d{3,8}\.\d{2}$/)){
+        alert('El precio debe ser de tres dígitos a ocho y debe tener dos cifras en los centavos, por ejemplo, 100.00');
+        return 2;
+    } 
+    else if(detalles.length > 250){
+        alert('Los detalles no deben exceder los 250 caracteres');
+        return 2;
+    } 
+    else if(isNaN(unidades) || unidades < 0){
+        alert ('Las unidades deben ser un número mayor o igual a cero');
+        return 2;
+    }
+    return 0;
+
+}
+
+function limpiarFormulario(){
+    var inputNombre = document.getElementById('name');
+    var inputDescripcion = document.getElementById('description');
+
+    inputNombre.value = '';
+    inputDescripcion.value = JSON.stringify(baseJSON, null, 2);
+}
+
+function agregarProducto(e){
+    e.preventDefault();
+
+    var productoJsonString = document.getElementById('description').value;
+    console.log('productoJsonString:\n' + productoJsonString);
+
+    var finalJSON = JSON.parse(productoJsonString);
+    finalJSON['nombre'] = document.getElementById('name').value;
+    console.log('finalJSON:\n' + finalJSON);
+
+    var resultadoValidacion = validarJSON(finalJSON);
+
+    if(resultadoValidacion != 0){
+        if(resultadoValidacion == 1){
+            var inputNombre = document.getElementById('name');
+            inputNombre.focus(); 
+        }
+        else{
+            var inputDescripcion = document.getElementById('description');
+            inputDescripcion.focus();
+        }
+    }
+    else{
+        if(finalJSON['imagen'] === ''){
+            finalJSON['imagen'] = "img/default.jpg";
+        }
+        if(finalJSON['detalles'] === 'NA'){
+            finalJSON['detalles'] = "";
+        }
+        finalJSON['precio'] = parseFloat(finalJSON['precio']);
+        finalJSON['unidades'] = parseInt(finalJSON['unidades']);
+
+        productoJsonString = JSON.stringify(finalJSON, null, 2);
+        console.log('Información a enviar a backend:\n' + productoJsonString);
+
+        var client = getXHR();
+        client.open('POST', './backend/create.php', true);
+        client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
+        client.onreadystatechange = function(){
+            if(client.readyState == 4 && client.status == 200){
+                console.log(client.responseText);
+                window.alert(client.responseText);
+                limpiarFormulario();
+            }
+        };
+        client.send(productoJsonString);
+    }
+
+}
