@@ -143,6 +143,72 @@ function buscarProducto(e) {
     client.send();
 }
 
+function validarJSON(json){
+
+    const marcasValidas = ['Canon', 'Fujifilm', 'Hasselblad', 'Leica', 'Nikon', 'Olympus', 'Pentax', 'Sony'];
+    const regexModelo = /^[a-zA-Z0-9-\s]+$/;
+    
+    var nombre = json['nombre'];
+    var marca = json['marca'];
+    var modelo = json['modelo'];
+    var precio = json['precio'];
+    var detalles = json['detalles'];
+    var unidades = parseInt(json['unidades']);
+    var ruta = json['imagen'];
+
+    console.log('Datos recibidos en función validarJSON: ' + 
+        '\nNombre: ' + nombre +
+        '\nMarca: ' + marca +
+        '\nModelo: ' + modelo +
+        '\nPrecio: ' + precio +
+        '\nDetalles: ' + detalles +
+        '\nUnidades: ' + unidades +
+        '\nRuta: ' + ruta);
+
+    if(nombre === ''){
+        alert('Debes llenar el campo del nombre');
+        return 1;
+    } 
+    else if(nombre.length > 100){
+        alert('El nombre no debe exceder los 100 caracteres');
+        return 1;
+    } 
+    else if(!marcasValidas.includes(marca)){
+        alert('Debes llenar el campo para la marca o poner una marca válida');
+        return 2;
+    } 
+    else if(modelo === '' || modelo === 'XX-000'){
+        alert('Debes llenar el campo del modelo');
+        return 2;
+    } 
+    else if(modelo.length > 25){
+        alert('El modelo no debe exceder los 25 caracteres');
+        return 2;
+    } 
+    else if(!regexModelo.test(modelo)){
+        alert('El modelo debe ser un texto alfanumérico');
+        return 2;
+    } 
+    else if(precio === ''){
+        alert('Debes llenar el campo del precio');
+        return 2;
+    } 
+    else if(isNaN(precio) || precio <= 99.99){
+        alert('El precio debe ser mayor a 99.99');
+        return 2;
+    } 
+    else if(detalles.length > 250){
+        alert('Los detalles no deben exceder los 250 caracteres');
+        return 2;
+    } 
+    else if(isNaN(unidades) || unidades < 0){
+        alert ('Las unidades deben ser un número mayor o igual a cero');
+        return 2;
+    }
+    return 0;
+
+}
+
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
 function agregarProducto(e) {
     e.preventDefault();
@@ -153,43 +219,61 @@ function agregarProducto(e) {
     var finalJSON = JSON.parse(productoJsonString);
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
-    // SE OBTIENE EL STRING DEL JSON FINAL
-    productoJsonString = JSON.stringify(finalJSON,null,2);
 
-/**
- * AQUÍ DEBES AGREGAR LAS VALIDACIONES DE LOS DATOS EN EL JSON
- * ...
- * 
- * --> EN CASO DE NO HABER ERRORES, SE ENVIAR EL PRODUCTO A AGREGAR
- */
+    var resultadoValidacion = validarJSON(finalJSON);
 
-    // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
-    var client = getXMLHttpRequest();
-    client.open('POST', './backend/product-add.php', true);
-    client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
-    client.onreadystatechange = function () {
-        // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
-        if (client.readyState == 4 && client.status == 200) {
-            console.log(client.responseText);
-            // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
-            let respuesta = JSON.parse(client.responseText);
-            // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
-            let template_bar = '';
-            template_bar += `
-                        <li style="list-style: none;">status: ${respuesta.status}</li>
-                        <li style="list-style: none;">message: ${respuesta.message}</li>
-                    `;
-
-            // SE HACE VISIBLE LA BARRA DE ESTADO
-            document.getElementById("product-result").className = "card my-4 d-block";
-            // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
-            document.getElementById("container").innerHTML = template_bar;
-
-            // SE LISTAN TODOS LOS PRODUCTOS
-            listarProductos();
+    if(resultadoValidacion != 0){
+        if(resultadoValidacion == 1){
+            var inputNombre = document.getElementById('name');
+            inputNombre.focus(); 
         }
-    };
-    client.send(productoJsonString);
+        else{
+            var inputDescripcion = document.getElementById('description');
+            inputDescripcion.focus();
+        }
+    }
+    else{
+        if(finalJSON['imagen'] === ''){
+            finalJSON['imagen'] = "img/default.jpg";
+        }
+        if(finalJSON['detalles'] === 'NA'){
+            finalJSON['detalles'] = "";
+        }
+        finalJSON['precio'] = parseFloat(finalJSON['precio']);
+        finalJSON['unidades'] = parseInt(finalJSON['unidades']);
+
+        productoJsonString = JSON.stringify(finalJSON, null, 2);
+        console.log('Información a enviar a backend:\n' + productoJsonString);
+        
+        // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
+        var client = getXMLHttpRequest();
+        client.open('POST', './backend/product-add.php', true);
+        client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
+        client.onreadystatechange = function () {
+            // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
+            if (client.readyState == 4 && client.status == 200) {
+                console.log(client.responseText);
+                // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
+                let respuesta = JSON.parse(client.responseText);
+                // SE CREA UNA PLANTILLA PARA CREAR INFORMACIÓN DE LA BARRA DE ESTADO
+                let template_bar = '';
+                template_bar += `
+                            <li style="list-style: none;">status: ${respuesta.status}</li>
+                            <li style="list-style: none;">message: ${respuesta.message}</li>
+                        `;
+    
+                // SE HACE VISIBLE LA BARRA DE ESTADO
+                document.getElementById("product-result").className = "card my-4 d-block";
+                // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
+                document.getElementById("container").innerHTML = template_bar;
+    
+                // SE LISTAN TODOS LOS PRODUCTOS
+                listarProductos();
+            }
+        };
+        client.send(productoJsonString);
+    }
+
 }
 
 // FUNCIÓN CALLBACK DE BOTÓN "Eliminar"
