@@ -132,34 +132,33 @@ $(document).ready(function(){
     function fetchProducts(){
         $.ajax({
             url: './backend/product-list.php',
-                    type: 'GET',
-                    data: { search },
-                    success: function(response){
-                        let productList = JSON.parse(response);
-                        let template = '';
-                        if(productList.length == 0){
-                            template += `<tr>
-                                            <td colspan="3"><strong>¡Aún no existen productos en la base de datos!</strong></td>
-                                        </tr>`;
-                        }
-                        else{
-                            productList.forEach(product => {
-                                template += `
-                                    <tr productid="${product.id}" productname="${product.name}">
-                                        <td>${product.id}</td>
-                                        <td>${product.name}</td>
-                                        <td>${product.description}</td>
-                                        <td>
-                                            <button class="product-delete btn btn-danger">
-                                                Eliminar
-                                            </button>
-                                        </td>
-                                    </tr>
-                                `;
-                            });
-                        }
-                        $('#products').html(template);
-                    }
+            type: 'GET',
+            success: function(response){
+                let productList = JSON.parse(response);
+                let template = '';
+                if(productList.length == 0){
+                    template += `<tr>
+                                    <td colspan="3"><strong>¡Aún no existen productos en la base de datos!</strong></td>
+                                </tr>`;
+                }
+                else{
+                    productList.forEach(product => {
+                        template += `
+                            <tr productid="${product.id}" productname="${product.name}">
+                                <td>${product.id}</td>
+                                <td>${product.name}</td>
+                                <td>${product.description}</td>
+                                <td>
+                                    <button class="product-delete btn btn-danger">
+                                        Eliminar
+                                    </button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                }
+                $('#products').html(template);
+            }
         });
     }
 
