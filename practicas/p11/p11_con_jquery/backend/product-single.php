@@ -7,10 +7,8 @@
         $query = "SELECT * FROM productos WHERE id = {$id}";
         $result = mysqli_query($conexion, $query);
 
-        if(!result){
-            die('Query Error: '.mysqli_error($conexion));
-        }
-        else{
+        if($conexion->query($query)){
+            $json = array();
             while($row = mysqli_fetch_array($result)){
                 $json[] = array(
                     'id' => $row['id'],
@@ -23,6 +21,9 @@
                     'imagen' => $row['imagen']
                 );
             }
+        }
+        else{
+            die('Query Error: '.mysqli_error($conexion));
         }
 		$conexion->close();
     } 
