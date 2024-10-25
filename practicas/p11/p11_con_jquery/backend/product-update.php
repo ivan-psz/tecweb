@@ -12,7 +12,7 @@
         
         $jsonOBJ = json_decode($producto);
         
-        $sql = "SELECT * FROM productos WHERE nombre = '{$jsonOBJ->nombre}' AND eliminado = 0";
+        $sql = "SELECT * FROM productos WHERE nombre = '{$jsonOBJ->nombre}' AND eliminado = 0 AND id != '{$jsonOBJ->id}'";
 	    $result = $conexion->query($sql);
         
         if ($result->num_rows == 0) {
