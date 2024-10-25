@@ -77,6 +77,11 @@ $(document).ready(function(){
                                                 <td>${producto.id}</td>
                                                 <td>${producto.nombre}</td>
                                                 <td>${description}</td>
+                                                <td>
+                                                    <button class="product-delete btn btn-danger">
+                                                        Eliminar
+                                                    </button>
+                                                </td>
                                             </tr>
                                         `;
                         });
@@ -86,9 +91,6 @@ $(document).ready(function(){
                     $('#product-result').show();
                 }
             });
-        }
-        else{
-            $('#product-result').hide();
         }
     });
 
