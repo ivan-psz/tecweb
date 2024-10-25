@@ -155,11 +155,11 @@ $(document).ready(function(){
                     productList.forEach(product => {
                         let description = '';
                             description += `
-                                                <li>${product.precio}</li>
-                                                <li>${product.unidades}</li>
-                                                <li>${product.modelo}</li>
-                                                <li>${product.marca}</li>
-                                                <li>${product.detalles}</li>
+                                                <li>precio: ${producto.precio}</li>
+                                                <li>unidades: ${producto.unidades}</li>
+                                                <li>modelo: ${producto.modelo}</li>
+                                                <li>marca: ${producto.marca}</li>
+                                                <li>detalles: ${producto.detalles}</li>
                                             `;
 
                         template += `
