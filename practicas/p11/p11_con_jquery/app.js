@@ -205,7 +205,7 @@ $(document).ready(function(){
 
     //Función para obtener un artículo
 
-    $(document).on('click', 'product-item', function(){
+    $(document).on('click', '.product-item', function(){
         let row = $(this)[0].parentElement.parentElement;
         let id = $(row).attr('productid');
         $.post('backend/product-single.php', {id}, function(response){
