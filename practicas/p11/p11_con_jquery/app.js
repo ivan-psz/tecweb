@@ -85,6 +85,7 @@ $(document).ready(function(){
         let finalJSON = JSON.parse(productoJsonString);
         finalJSON['id'] = $('#productId').val();
         finalJSON['nombre'] = $('#name').val();
+        $('#botonFormulario').html(edit === false ? 'Agregar producto' : 'Editar producto');
 
         const resultadoValidacion = validarJSON(finalJSON);
 
@@ -221,9 +222,6 @@ $(document).ready(function(){
             $('#description').val(description);
         });
     });
-
-    $('#botonFormulario').html(edit === false ? 'Agregar producto' : 'Editar producto');
-
 });
 
 //Función para la validación del formulario
