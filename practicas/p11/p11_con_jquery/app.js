@@ -56,17 +56,11 @@ $(document).ready(function(){
                     let productos = JSON.parse(response);
                     let template = '';
     
-                    console.log('Productos recibidos del servidor: ')
-                    console.table(productos);
-    
                     if(productos.length == 0){
                         template += `<strong>No hay productos asociados al parámetro ingresado.</strong>`;
                     }
                     else{
                         productos.forEach(producto => {
-                            console.log('Producto en proceso: ');
-                            console.table(producto);
-        
                             template += `<li>${producto.nombre}</li>`;
                         });
                     }
@@ -144,10 +138,18 @@ $(document).ready(function(){
                 else{
                     productList.forEach(product => {
                         template += `
-                            <tr productid="${product.id}" productname="${product.name}">
+                            <tr productid="${product.id}" productname="${product.nombre}">
                                 <td>${product.id}</td>
-                                <td>${product.name}</td>
-                                <td>${product.description}</td>
+                                <td>${product.nombre}</td>
+                                <td>
+                                    <ul>
+                                        <li>${product.precio}</li>
+                                        <li>${product.unidades}</li>
+                                        <li>${product.modelo}</li>
+                                        <li>${product.marca}</li>
+                                        <li>${product.detalles}</li>
+                                    </ul>
+                                </td>
                                 <td>
                                     <button class="product-delete btn btn-danger">
                                         Eliminar
