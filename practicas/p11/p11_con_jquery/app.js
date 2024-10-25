@@ -16,14 +16,6 @@ function init() {
 
     LÓGICA A MANTENER
 
-    i. Cargar toda la lista de productos NO eliminados al abrir la página.
-
-    ii. Cargar la tabla de productos NO eliminados que coincidan con lo que se
-        “vaya” tecleando en el campo de búsqueda.
-
-    iii. Cargar en la barra de estado los nombres de los productos NO eliminados
-        coincidentes con lo que se “vaya” tecleando en el campo de búsqueda.
-
     iv. Recibir un estatus y un mensaje al registrar un producto; ya sea que la
         inserción sea exitosa o no.
 
@@ -92,6 +84,9 @@ $(document).ready(function(){
                 }
             });
         }
+        else{
+            $('#product-result').hide();
+        }
     });
 
     //Función para crear artículos
@@ -99,7 +94,7 @@ $(document).ready(function(){
     $('#product-form').submit(function(e) {
         e.preventDefault();
 
-        const productoJsonString = $('#description').val();
+        let productoJsonString = $('#description').val();
         let finalJSON = JSON.parse(productoJsonString);
         finalJSON['nombre'] = $('#name').val();
 
@@ -114,7 +109,8 @@ $(document).ready(function(){
             }
         }
         else{
-            $.post('backend/product-add.php', finalJSON, function(response){
+            productoJsonString = JSON.stringify(finalJSON, null, 2);
+            $.post('backend/product-add.php', productoJsonString, function(response){
                 let serverResponse = JSON.parse(response);
                 $('#description').val(JSON.stringify(baseJSON,null,2));
                 $('#product-form').val();
@@ -185,10 +181,10 @@ $(document).ready(function(){
 
     $(document).on('click', '.product-delete', function(){
         let row = $(this)[0].parentElement.parentElement;
-        let name = $(row).attribute('productname');
+        let name = $(row).attr('productname');
 
         if(confirm('¿De verdad quieres eliminar ' + name + '?')){
-            let id = $(row).attribute('productid');
+            let id = $(row).attr('productid');
             $.post('backend/product-delete.php', {id}, function(response){
                 let serverResponse = JSON.parse(response);
                 if(serverResponse['status'] === 'error'){
