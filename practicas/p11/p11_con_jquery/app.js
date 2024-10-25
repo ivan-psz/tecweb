@@ -58,7 +58,7 @@ $(document).ready(function(){
                     let template = '';
 
                     if(productos.length == 0){
-                        productNames += `<strong>No hay productos asociados al parámetro ingresado.</strong>`;
+                        productNames += `<li><strong>No hay productos asociados al parámetro ingresado.</strong></li>`;
                     }
                     else{
                         productos.forEach(producto => {
@@ -66,11 +66,11 @@ $(document).ready(function(){
 
                             let description = '';
                             description += `
-                                                <li>${producto.precio}</li>
-                                                <li>${producto.unidades}</li>
-                                                <li>${producto.modelo}</li>
-                                                <li>${producto.marca}</li>
-                                                <li>${producto.detalles}</li>
+                                                <li>precio: ${producto.precio}</li>
+                                                <li>unidades: ${producto.unidades}</li>
+                                                <li>modelo: ${producto.modelo}</li>
+                                                <li>marca: ${producto.marca}</li>
+                                                <li>detalles: ${producto.detalles}</li>
                                             `;
                             template += `
                                             <tr productid="${producto.id}" productname="${producto.nombre}">
@@ -86,9 +86,9 @@ $(document).ready(function(){
                                         `;
                         });
                     }
+                    $('#product-result').show();
                     $('#container').html(productNames);
                     $('#products').html(template);
-                    $('#product-result').show();
                 }
             });
         }
@@ -124,8 +124,6 @@ $(document).ready(function(){
                                     <li>${serverResponse.status}</li>
                                     <li>${serverResponse.message}</li>
                                 `;
-                    $('#container').html(template);
-                    $('#product-result').show();
                 }
                 else{
                     template = '';
@@ -133,10 +131,10 @@ $(document).ready(function(){
                                     <li>${serverResponse.status}</li>
                                     <li>${serverResponse.message}</li>
                                 `;
-                    $('#container').html(template);
-                    $('#product-result').show();
                     fetchProducts();
                 }
+                $('#product-result').show();
+                $('#container').html(template);
             });
         }
     });
@@ -193,25 +191,23 @@ $(document).ready(function(){
             let id = $(row).attribute('productid');
             $.post('backend/product-delete.php', {id}, function(response){
                 let serverResponse = JSON.parse(response);
-                    if(serverResponse['status'] === 'error'){
-                        template = '';
-                        template += `
-                                        <li>${serverResponse.status}</li>
-                                        <li>${serverResponse.message}</li>
-                                    `;
-                        $('#container').html(template);
-                        $('#product-result').show();
-                    }
-                    else{
-                        template = '';
-                        template += `
-                                        <li>${serverResponse.status}</li>
-                                        <li>${serverResponse.message}</li>
-                                    `;
-                        $('#container').html(template);
-                        $('#product-result').show();
-                        fetchProducts();
-                    }
+                if(serverResponse['status'] === 'error'){
+                    template = '';
+                    template += `
+                                    <li>${serverResponse.status}</li>
+                                    <li>${serverResponse.message}</li>
+                                `;
+                }
+                else{
+                    template = '';
+                    template += `
+                                    <li>${serverResponse.status}</li>
+                                    <li>${serverResponse.message}</li>
+                                `;
+                    fetchProducts();
+                }
+                $('#product-result').show();
+                $('#container').html(template);
             });
         }
     });
