@@ -12,26 +12,10 @@ function init() {
     document.getElementById("description").value = JsonString;
 }
 
-/*
-
-    LÓGICA A MANTENER
-
-    iv. Recibir un estatus y un mensaje al registrar un producto; ya sea que la
-        inserción sea exitosa o no.
-
-    v. Cargar toda la lista de productos NO eliminados al presionar el botón de
-        “Agregar Producto”, esto para visualizar inmediatamente la lista
-        actualizada.
-
-    vi. Cargar toda la lista de productos NO eliminados después presionar el botón
-        “Eliminar”, esto para visualizar inmediatamente la lista actualizada.
-
-*/
-
 $(document).ready(function(){
-
     console.log('jQuery ha cargado');
 
+    let edit = false;
     $('#product-result').hide();
     fetchProducts();
 
@@ -67,7 +51,9 @@ $(document).ready(function(){
                             template += `
                                             <tr productid="${producto.id}" productname="${producto.nombre}">
                                                 <td>${producto.id}</td>
-                                                <td>${producto.nombre}</td>
+                                                <td>
+                                                    <a href="#" class="product-item">${product.nombre}</a>
+                                                </td>
                                                 <td>${description}</td>
                                                 <td>
                                                     <button class="product-delete btn btn-danger">
@@ -90,13 +76,14 @@ $(document).ready(function(){
         }
     });
 
-    //Función para crear artículos
+    //Función para crear o editar artículos
 
     $('#product-form').submit(function(e) {
         e.preventDefault();
 
         let productoJsonString = $('#description').val();
         let finalJSON = JSON.parse(productoJsonString);
+        finalJSON['id'] = $('#productId').val();
         finalJSON['nombre'] = $('#name').val();
 
         const resultadoValidacion = validarJSON(finalJSON);
@@ -110,8 +97,9 @@ $(document).ready(function(){
             }
         }
         else{
+            let url = edit === false ? 'backend/product-add.php' : 'product/update.php';
             productoJsonString = JSON.stringify(finalJSON, null, 2);
-            $.post('backend/product-add.php', productoJsonString, function(response){
+            $.post(url, productoJsonString, function(response){
                 let serverResponse = JSON.parse(response);
                 $('#description').val(JSON.stringify(baseJSON,null,2));
                 $('#name').val('');
@@ -135,6 +123,7 @@ $(document).ready(function(){
                 $('#container').html(template);
             });
         }
+        edit = false;
     });
 
     //Función para obtener todos los productos no eliminados
@@ -165,7 +154,9 @@ $(document).ready(function(){
                         template += `
                             <tr productid="${product.id}" productname="${product.nombre}">
                                 <td>${product.id}</td>
-                                <td>${product.nombre}</td>
+                                <td>
+                                    <a href="#" class="product-item">${product.nombre}</a>
+                                </td>
                                 <td>${description}</td>
                                 <td>
                                     <button class="product-delete btn btn-danger">
@@ -180,6 +171,8 @@ $(document).ready(function(){
             }
         });
     }
+
+    //Función para eliminar
 
     $(document).on('click', '.product-delete', function(){
         let row = $(this)[0].parentElement.parentElement;
@@ -209,6 +202,29 @@ $(document).ready(function(){
             });
         }
     });
+
+    //Función para obtener un artículo
+
+    $(document).on('click', 'product-item', function(){
+        let row = $(this)[0].parentElement.parentElement;
+        let id = $(row).attr('productid');
+        $.post('backend/product-single.php', {id}, function(response){
+            edit = true;
+            const product = JSON.parse(response);
+            let pID = product['id'];
+            let nombre = product['nombre'];
+            delete product.id;
+            delete product.nombre;
+            let description = JSON.stringify(product, null, 2);
+
+            $('#productId').val(pID);
+            $('#name').val(nombre);
+            $('#description').val(description);
+
+        });
+    });
+
+    $('#botonFormulario').val(edit === false ? 'Agregar producto' : 'Editar producto');
 
 });
 
