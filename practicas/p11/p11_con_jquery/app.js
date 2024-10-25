@@ -52,7 +52,7 @@ $(document).ready(function(){
                                             <tr productid="${producto.id}" productname="${producto.nombre}">
                                                 <td>${producto.id}</td>
                                                 <td>
-                                                    <a href="#" class="product-item">${product.nombre}</a>
+                                                    <a href="#" class="product-item">${producto.nombre}</a>
                                                 </td>
                                                 <td>${description}</td>
                                                 <td>
@@ -97,7 +97,7 @@ $(document).ready(function(){
             }
         }
         else{
-            let url = edit === false ? 'backend/product-add.php' : 'product/update.php';
+            let url = edit === false ? 'backend/product-add.php' : 'backend/product-update.php';
             productoJsonString = JSON.stringify(finalJSON, null, 2);
             $.post(url, productoJsonString, function(response){
                 let serverResponse = JSON.parse(response);
@@ -210,21 +210,19 @@ $(document).ready(function(){
         let id = $(row).attr('productid');
         $.post('backend/product-single.php', {id}, function(response){
             edit = true;
-            const product = JSON.parse(response);
-            let pID = product['id'];
-            let nombre = product['nombre'];
+            let product = JSON.parse(response);
+
+            $('#productId').val(product['id']);
+            $('#name').val(product['nombre']);
+
             delete product.id;
             delete product.nombre;
             let description = JSON.stringify(product, null, 2);
-
-            $('#productId').val(pID);
-            $('#name').val(nombre);
             $('#description').val(description);
-
         });
     });
 
-    $('#botonFormulario').val(edit === false ? 'Agregar producto' : 'Editar producto');
+    $('#botonFormulario').html(edit === false ? 'Agregar producto' : 'Editar producto');
 
 });
 
