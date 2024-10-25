@@ -49,22 +49,40 @@ $(document).ready(function(){
         if($('#search').val()){
             let search = $('#search').val();
             $.ajax({
-                url: './backend/product-search.php',
+                url: 'backend/product-search.php',
                 type: 'POST',
                 data: { search },
                 success: function(response){
                     let productos = JSON.parse(response);
+                    let productNames = '';
                     let template = '';
-    
+
                     if(productos.length == 0){
-                        template += `<strong>No hay productos asociados al parámetro ingresado.</strong>`;
+                        productNames += `<strong>No hay productos asociados al parámetro ingresado.</strong>`;
                     }
                     else{
                         productos.forEach(producto => {
-                            template += `<li>${producto.nombre}</li>`;
+                            productNames += `<li>${producto.nombre}</li>`;
+
+                            let description = '';
+                            description += `
+                                                <li>${producto.precio}</li>
+                                                <li>${producto.unidades}</li>
+                                                <li>${producto.modelo}</li>
+                                                <li>${producto.marca}</li>
+                                                <li>${producto.detalles}</li>
+                                            `;
+                            template += `
+                                            <tr productid="${producto.id}" productname="${producto.nombre}">
+                                                <td>${producto.id}</td>
+                                                <td>${producto.nombre}</td>
+                                                <td>${description}</td>
+                                            </tr>
+                                        `;
                         });
                     }
-                    $('#container').html(template);
+                    $('#container').html(productNames);
+                    $('#products').html(template);
                     $('#product-result').show();
                 }
             });
@@ -94,9 +112,10 @@ $(document).ready(function(){
             }
         }
         else{
-            $.post('./backend/product-add.php', finalJSON, function(response){
+            $.post('backend/product-add.php', finalJSON, function(response){
                 let serverResponse = JSON.parse(response);
-                $('#product-form').trigger('reset');
+                $('#description').val(JSON.stringify(baseJSON,null,2));
+                $('#product-form').val();
                 if(serverResponse['status'] === 'error'){
                     template = '';
                     template += `
@@ -118,14 +137,13 @@ $(document).ready(function(){
                 }
             });
         }
-        
     });
 
     //Función para obtener todos los productos no eliminados
 
     function fetchProducts(){
         $.ajax({
-            url: './backend/product-list.php',
+            url: 'backend/product-list.php',
             type: 'GET',
             success: function(response){
                 let productList = JSON.parse(response);
@@ -137,19 +155,20 @@ $(document).ready(function(){
                 }
                 else{
                     productList.forEach(product => {
+                        let description = '';
+                            description += `
+                                                <li>${product.precio}</li>
+                                                <li>${product.unidades}</li>
+                                                <li>${product.modelo}</li>
+                                                <li>${product.marca}</li>
+                                                <li>${product.detalles}</li>
+                                            `;
+
                         template += `
                             <tr productid="${product.id}" productname="${product.nombre}">
                                 <td>${product.id}</td>
                                 <td>${product.nombre}</td>
-                                <td>
-                                    <ul>
-                                        <li>${product.precio}</li>
-                                        <li>${product.unidades}</li>
-                                        <li>${product.modelo}</li>
-                                        <li>${product.marca}</li>
-                                        <li>${product.detalles}</li>
-                                    </ul>
-                                </td>
+                                <td>${description}</td>
                                 <td>
                                     <button class="product-delete btn btn-danger">
                                         Eliminar
@@ -169,8 +188,8 @@ $(document).ready(function(){
         let name = $(row).attribute('productname');
 
         if(confirm('¿De verdad quieres eliminar ' + name + '?')){
-            $.post('./backend/product-delete.php', {id}, function(response){
-                let id = $(row).attribute('productid');
+            let id = $(row).attribute('productid');
+            $.post('backend/product-delete.php', {id}, function(response){
                 let serverResponse = JSON.parse(response);
                     if(serverResponse['status'] === 'error'){
                         template = '';
