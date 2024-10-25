@@ -86,6 +86,7 @@ $(document).ready(function(){
         }
         else{
             $('#product-result').hide();
+            fetchProducts();
         }
     });
 
@@ -113,6 +114,7 @@ $(document).ready(function(){
             $.post('backend/product-add.php', productoJsonString, function(response){
                 let serverResponse = JSON.parse(response);
                 $('#description').val(JSON.stringify(baseJSON,null,2));
+                $('#name').val('');
                 $('#product-form').val();
                 if(serverResponse['status'] === 'error'){
                     template = '';
