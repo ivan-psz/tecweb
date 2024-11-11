@@ -1,8 +1,8 @@
 <?php
-    use TECWEB\MYAPI\Products;
+    use TECWEB\MYAPI\Read\Read;
     require_once __DIR__.'/vendor/autoload.php';
 
-    $productos = new Products('marketzone');
-    $productos->single( $_POST['id'] );
+    $productos = new Read('marketzone');
+    $productos->single($_POST['id']);
     echo $productos->getData();
 ?>
