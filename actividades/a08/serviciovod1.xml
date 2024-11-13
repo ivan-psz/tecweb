@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogovod>
+    <cuenta>
+        <correo>24.ivan.pzs@gmail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Iván</usuario>
+                <idioma>EN</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Y venían</usuario>
+                <idioma>FR</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>Close</nombre>
+                    <duracion>104</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Güeros</nombre>
+                    <duracion>111</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Tokyo Story</nombre>
+                    <duracion>136</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Paris, Texas</nombre>
+                    <duracion>147</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Romance</nombre>
+                <titulo>
+                    <nombre>Eternal Sunshine of the Spotless Mind</nombre>
+                    <duracion>107</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Lost in Translation</nombre>
+                    <duracion>101</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Before Sunrise</nombre>
+                    <duracion>105</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Her</nombre>
+                    <duracion>126</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>The office</nombre>
+                    <duracion>9</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Fleabag</nombre>
+                    <duracion>2</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Seinfeld</nombre>
+                    <duracion>9</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Sex and the City</nombre>
+                    <duracion>6</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>Skins</nombre>
+                    <duracion>7</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Euphoria</nombre>
+                    <duracion>2</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Breaking Bad</nombre>
+                    <duracion>5</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Dark</nombre>
+                    <duracion>3</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
