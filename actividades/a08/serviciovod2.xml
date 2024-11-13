@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogovod>
+    <cuenta correo="24.ivan.pzs@gmail.com">
+        <perfiles>
+            <perfil usuario="Iván" idioma="EN"/>
+            <perfil usuario="Y venían" idioma="FR"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Drama">
+                <titulo nombre="Close" duracion="104"/>
+                <titulo nombre="Güeros" duracion="111"/>
+                <titulo nombre="Tokyo Story" duracion="136"/>
+                <titulo nombre="Paris, Texas" duracion="147"/>
+            </genero>
+            <genero nombre="Romance">
+                <titulo nombre="Eternal Sunshine of the Spotless Mind" duracion="107"/>
+                <titulo nombre="Lost in Translation" duracion="101"/>
+                <titulo nombre="Before Sunrise" duracion="105"/>
+                <titulo nombre="Her" duracion="126"/>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo nombre="The Office" duracion="9"/>
+                <titulo nombre="Fleabag" duracion="2"/>
+                <titulo nombre="Seinfeld" duracion="9"/>
+                <titulo nombre="Sex and the City" duracion="6"/>
+            </genero>
+            <genero nombre="Drama">
+                <titulo nombre="Skins" duracion="7"/>
+                <titulo nombre="Euphoria" duracion="2"/>
+                <titulo nombre="Breaking Bad" duracion="5"/>
+                <titulo nombre="Dark" duracion="3"/>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
