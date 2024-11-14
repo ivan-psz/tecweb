@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod.dtd">
+<CatalogoVOD>
+    <cuenta correo="24.ivan.pzs@gmail.com">
+        <perfiles>
+            <perfil usuario="Iván" idioma="EN"/>
+            <perfil usuario="Y_Venían" idioma="FR"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Drama">
+                <titulo duracion="01:44:00">Close</titulo>
+                <titulo duracion="01:51:00">Güeros</titulo>
+                <titulo duracion="02:16:00">Tokyo Story</titulo>
+                <titulo duracion="02:27:00">Paris, Texas</titulo>
+            </genero>
+            <genero nombre="Romance">
+                <titulo duracion="01:47:00">Eternal Sunshine of the Spotless Mind</titulo>
+                <titulo duracion="01:41:00">Lost in Translation</titulo>
+                <titulo duracion="01:45:00">Before Sunrise</titulo>
+                <titulo duracion="02:06:00">Her</titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo duracion="00:30:00">The Office</titulo>
+                <titulo duracion="00:30:00">Fleabag</titulo>
+                <titulo duracion="00:30:00">Seinfeld</titulo>
+                <titulo duracion="00:30:00">Sex and the City</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="00:30:00">Skins</titulo>
+                <titulo duracion="01:00:00">Euphoria</titulo>
+                <titulo duracion="00:50:00">Breaking Bad</titulo>
+                <titulo duracion="01:00:00">Dark</titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
