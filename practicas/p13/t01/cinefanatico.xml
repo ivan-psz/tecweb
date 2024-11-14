@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="1" visitas="7" puntos="70">
+        <nombre>Iván Pérez Sánchez</nombre>
+        <correo>24.ivan.pzs@gmail.com</correo>
+    </tarjeta>
+    <tarjeta noserie="2" visitas="3" puntos="30">
+        <nombre>Iván Sánchez Pérez</nombre>
+        <correo>ivan.perezsa@alumno.buap.mx</correo>
+        <telefono tipo="movil">2223430767</telefono>
+    </tarjeta>
+</cinefanatico>
