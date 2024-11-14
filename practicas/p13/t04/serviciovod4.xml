@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd">
+<CatalogoVOD>
+    <cuenta correo="24.ivan.pzs@gmail.com">
+        <perfiles>
+            <perfil usuario="Iván" idioma="EN"/>
+            <perfil usuario="Y_Venían" idioma="FR"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="USA">
+            <genero nombre="Drama">
+                <titulo duracion="01:44:00">Close</titulo>                  <!-- Este es BEL -->
+                <titulo duracion="02:27:00">Paris, Texas</titulo>
+            </genero>
+            <genero nombre="Romance">
+                <titulo duracion="01:47:00">Eternal Sunshine of the Spotless Mind</titulo>
+                <titulo duracion="01:45:00">Before Sunrise</titulo>         <!-- Y este es AUT -->
+                <titulo duracion="02:06:00">Her</titulo>
+            </genero>
+        </peliculas>
+        <peliculas region="MEX">
+            <genero nombre="Drama">
+                <titulo duracion="01:51:00">Güeros</titulo>
+            </genero>
+        </peliculas>
+        <peliculas region="KOR">
+            <genero nombre="Drama">
+                <titulo duracion="02:16:00">Tokyo Story</titulo>            <!-- Este es JAP, pero KOR está cerca sjsjsjsj -->
+            </genero>
+            <genero nombre="Romance">
+                <titulo duracion="01:41:00">Lost in Translation</titulo>    <!-- Este tmb es JAP T_T -->
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Comedia">
+                <titulo duracion="00:30:00">The Office</titulo>
+                <titulo duracion="00:30:00">Fleabag</titulo>                <!-- Este creo q es GB o GB-ENG -->
+                <titulo duracion="00:30:00">Seinfeld</titulo>
+                <titulo duracion="00:30:00">Sex and the City</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="00:30:00">Skins</titulo>                  <!-- Este igual -->
+                <titulo duracion="01:00:00">Euphoria</titulo>
+                <titulo duracion="00:50:00">Breaking Bad</titulo>
+                <titulo duracion="01:00:00">Dark</titulo>                   <!-- Este es GER -->
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>
