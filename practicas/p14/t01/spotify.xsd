@@ -9,7 +9,7 @@
                         <xs:sequence>
                             <xs:element name="Nombre" type="xs:string"/>
                             <xs:element name="Correo" type="xs:string"/>
-                            <xs:element name="Telefono" minOccurs="0">
+                            <xs:element name="Telefono" minOccurs="0" maxOccurs="1">
                                 <xs:complexType>
                                     <xs:simpleContent>
                                         <xs:extension base="xs:string">
