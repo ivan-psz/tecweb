@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="spotify.xsd"
+    version="1.0">
+    <Cuenta id="1" plan="gratuito">
+        <Nombre>John Wick</Nombre>
+        <Correo>john011@gmail.com</Correo>
+        <Telefono tipo="movil">000-123-4567</Telefono>
+    </Cuenta>
+    <Cuenta id="2" plan="premium" fechaIni="2024-11-15" fechaFin="2024-11-19">
+        <Nombre>Iván Pérez Sánchez</Nombre>
+        <Correo>24.ivan.pzs@gmail.com</Correo>
+    </Cuenta>
+</Spotify>
