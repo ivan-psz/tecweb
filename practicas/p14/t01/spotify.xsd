@@ -26,7 +26,7 @@
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
-                        <xs:attribute name="id" type="xs:int" use="required"/>
+                        <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
                         <xs:attribute name="plan" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
