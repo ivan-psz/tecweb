@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tw="http://tecnologiasweb.com.mx"
+    targetNamespace="http://tecnologiasweb.com.mx"
+    elementFormDefault="qualified"
+>
+    
+    <xs:complexType name="cuentaType">
+        <xs:sequence>
+            <xs:element name="Nombre" type="xs:string"/>
+            <xs:element name="Correo" type="xs:string"/>
+            <xs:element name="Telefono" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="tipo" use="required">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="movil"/>
+                                        <xs:enumeration value="fijo"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="plan" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="gratuito"/>
+                    <xs:enumeration value="premium"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="fechaIni" type="xs:date" use="optional"/>
+        <xs:attribute name="fechaFin" type="xs:date" use="optional"/>
+    </xs:complexType>
+    
+    <xs:complexType name="spotifyType">
+        <xs:sequence>
+            <xs:element name="Cuenta" type="tw:cuentaType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <xs:element name="Spotify" type="tw:spotifyType"/>
+    
+</xs:schema>
