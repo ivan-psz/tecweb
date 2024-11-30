@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="serviciovod.xsd">
+  <cuenta correo="24.ivan.pzs@gmail.com">
+    <perfiles>
+      <perfil usuario="Iván" idioma="EN"/>
+      <perfil usuario="Avin" idioma="ES"/>
+    </perfiles>
+  </cuenta>
+  <contenido>
+    <peliculas>
+      <genero nombre="Drama">
+        <titulo duracion="01:44:00">Close</titulo>
+        <titulo duracion="02:27:00">Paris, Texas</titulo>
+      </genero>
+      <genero nombre="Romance">
+        <titulo duracion="01:47:00">Eternal Sunshine of the Spotless Mind</titulo>
+        <titulo duracion="01:45:00">Before Sunrise</titulo>
+        <titulo duracion="02:06:00">Her</titulo>
+      </genero>
+      <genero nombre="Clásico">
+        <titulo duracion="01:28:00">Mujeres al Borde de un Ataque de Nervios</titulo>
+        <titulo duracion="01:41:00">Todo sobre mi Madre</titulo>
+      </genero>
+    </peliculas>
+    <series>
+      <genero nombre="Comedia">
+        <titulo duracion="00:30:00">The Office</titulo>
+        <titulo duracion="00:30:00">Fleabag</titulo>
+      </genero>
+      <genero nombre="Drama">
+        <titulo duracion="01:00:00">Euphoria</titulo>
+        <titulo duracion="01:00:00">Dark</titulo>
+      </genero>
+      <genero nombre="Animación">
+        <titulo duracion="00:11:00">Hora de Aventura</titulo>
+        <titulo duracion="00:11:00">Más Allá del Jardín</titulo>
+      </genero>
+    </series>
+  </contenido>
+</CatalogoVOD>
