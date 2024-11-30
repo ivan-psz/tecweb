@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Servicio de validación XML</title>
+
+        <!-- INTEGRACIÓN DE BOOTSTRAP -->
+
+        <link rel="stylesheet" href="https://bootswatch.com/4/superhero/bootstrap.min.css">
+
+        <!--
+            https://bootswatch.com/5/cyborg/bootstrap.min.css
+        -->
+
+        <!-- INTEGRACIÓN JQUERY -->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <!-- Lógica del frontend -->
+
+        <script src="app.js"></script>
+
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+            <div class="mx-auto order-0">
+                <a href="#" class="navbar-brand mx-auto">Servicio de validación XML</a>
+            </div>
+        </nav>
+
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="xml-form">
+                                <div class="form-group">
+                                    <label for="xml">Elige el archivo XML por validar: </label>
+                                    <input class="form-control p-1" type="file" id="xml" accept=".xml" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="xsd">Elige el archivo XSD para validar: </label>
+                                    <input class="form-control p-1" type="file" id="xsd" accept=".xsd" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block text-center">Validar XML</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+
+                    <div class="card my-4" id="validation-result">
+                        <div class="card-body">
+                            <ul id="container">
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                            <th>Resultado de la validación</th>
+                        </thead>
+                        <tbody id="xml-content">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

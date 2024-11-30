@@ -1,0 +1,3 @@
+Si estás stalkeando el repo (o es el profe jsajsjajsaj😨😨😨😨). Esta carpeta contiene la primera versión de la práctica (y q me gustó mucho y x eso la quiero mantener en el repo :b).
+
+Pensé que teníamos que hacer un HTML o algo para subir el XML y XSD; y que la validación se hiciera con el archivo .php que se iba a crear (serviciovod.php), pero después me di cuenta que en ningún momento estaba haciendo uso del DOMDocument (o a lo mejor sí, pero no sabía/sé¿¿¿¿¿¿) para generar el HTML y ps mejor lo dejé inconcluso pipipip😿.

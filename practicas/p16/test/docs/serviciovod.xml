@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CatalogoVOD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="serviciovod.xsd">
+    <cuenta correo="24.ivan.pzs@gmail.com">
+        <perfiles>
+            <perfil usuario="Iván" idioma="EN"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+
+        <peliculas>
+            <genero nombre="Drama">
+                <titulo duracion="01:44:00">Close</titulo>                  
+                <titulo duracion="02:27:00">Paris, Texas</titulo>
+            </genero>
+            <genero nombre="Romance">
+                <titulo duracion="01:47:00">Eternal Sunshine of the Spotless Mind</titulo>
+                <titulo duracion="01:45:00">Before Sunrise</titulo>         
+                <titulo duracion="02:06:00">Her</titulo>
+            </genero>
+        </peliculas>
+
+        <series>
+            <genero nombre="Comedia">
+                <titulo duracion="00:30:00">The Office</titulo>
+                <titulo duracion="00:30:00">Fleabag</titulo>                
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="01:00:00">Euphoria</titulo>
+                <titulo duracion="01:00:00">Dark</titulo>                   
+            </genero>
+        </series>
+
+    </contenido>
+</CatalogoVOD>
